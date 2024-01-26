@@ -22,6 +22,10 @@ mainRouter.get('/admin/adminDashboard',(req,res)=>
     res.render('adminDashboard')
 }
 )
-
+mainRouter.get('/howtofile',(req,res)=>
+{
+    res.render('howtofile')
+}
+)
 
 module.exports = mainRouter
