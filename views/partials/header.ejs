@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+       <!-- tailwind CDN -->
+       <script src="https://cdn.tailwindcss.com"></script>
+       <!---CSS Link-->
+       <link rel="stylesheet" href="home.css">
+       <!--font link-->
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300&family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300;600&family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+<style>
+
+  /* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 18px;
+  width: 18px;
+  margin: 5px 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #80DED9;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+
+<body>
+<nav class="flex justify-between px-12 bg-[#80DED9] pt-6">
+    <div class=""> 
+    
+      <img src="../public/images/logo.svg" alt="">
+    </div> 
+      <div class="flex">
+
+        <div class="mt-4 mx-2 dropdown">
+          <span class="pl-4 pr-2 py-2 text-md font-semibold bg-[#77CEC8] rounded-full flex">Property 
+            <img src="../public/images/nav_arrow_down.svg" alt="" class="ml-2">
+          </span>
+          <div class=" dropdown-content">
+           <p>npa2pa</p>
+          </div>
+        </div>
+       
+     <div class="mt-4 mx-2">
+      <button class="px-4 py-2 text-md font-semibold bg-[#77CEC8] rounded-full">News</button>
+     </div>
+     <div class="mt-4 mx-2">
+      <button class="px-4 py-2 text-md font-semibold bg-[#77CEC8] rounded-full">Case Studies </button>
+     </div>
+     <div class="mt-4 mx-2">
+    <a href="/blog.html"> <button class="px-4 py-2 text-md font-semibold bg-[#77CEC8] rounded-full">Blogs</button> </a> 
+     </div>
+     <div class="mt-4 mx-2">
+    <a href="/team_member.html">  <button class="px-4 py-2 text-md font-semibold bg-[#77CEC8] rounded-full">Expert Team</button> </a>
+     </div>
+     <div class="mt-4 mx-2">
+      <button class="px-4 py-2 text-md font-semibold bg-[#77CEC8] rounded-full">Tools</button>
+     </div>
+     <div class="mt-4 mx-2">
+      <button class="px-4 py-2 text-md font-semibold bg-[#3C3C3C] text-white rounded-full">Join Us</button>
+     </div> 
+     <div class="mt-4 mx-2">
+      <button class="px-4 py-2 text-md font-semibold bg-white text-black rounded-full flex">Signup/Login &nbsp;<h2>→</h2> 
+        
+      </button>
+     </div> 
+   
+    </div>
+ 
+  </nav>

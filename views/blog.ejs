@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!---CSS Link-->
+    <link rel="stylesheet" href="home.css">
+    <!--font link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300;600&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    .textInter {
+        font-family: 'Inter', sans-serif;
+
+    }
+
+    .outline-text {
+        color: transparent;
+        /* Make text color transparent */
+        -webkit-text-stroke: 1px black;
+        /* Add text stroke (for Safari/Chrome) */
+        /* Add text stroke (for other browsers supporting the standard) */
+    }
+
+    .textPoppins {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
+<body>
+    <section class="flex my-[3rem] w-[100%] flex-col gap-[1rem] text-center justify-content items-center" id="header ">
+
+        <h2 class="text-[#000] text-[3rem] font-[900] textPoppins  ">
+            OUR <span class="textInter font-[700] outline-text ">BLOGS</span></h2>
+        <div class="flex mx-auto capitalize justify-center px-2  w-[80%]   text-[
+            #141414] textPoppins font-[600] text-[1.25rem]" id="tab">
+            <div class="border-b-[3px] border-solid" id="view_all" onclick="filterTab('view_all')">
+                <p class="m-3">View All</p>
+
+            </div>
+            <div class="border-b-[3px] border-solid" id="design_roduct" onclick="filterTab('design_roduct')">
+                <p class="m-3">Design Product</p>
+
+            </div>
+            <div class=" border-b-[3px] border-solid" id="Development" onclick="filterTab('Development')">
+                <p class="m-3">Development</p>
+
+            </div>
+            <div class=" border-b-[3px] border-solid" id="customer_support" onclick="filterTab('customer_support')">
+                <p class="m-3">customer support</p>
+
+            </div>
+            <div class="border-b-[3px] border-solid" id="leadership_management"
+                onclick="filterTab('leadership_management')">
+                <p class="m-3">leadership management</p>
+
+            </div>
+            <div class="border-b-[3px] border-solid" id="interviews" onclick="filterTab('interviews')">
+                <p class="m-3">interviews</p>
+            </div>
+        </div>
+
+
+    </section>
+    <section id="blogContainer" class="blogSection w-[90%] mx-auto grid grid-cols-2 gap-[5rem] place-content-center">
+
+    </section>
+    <div class="border-[1px] w-[90%] mx-auto border-solid my-[3rem]"></div>
+    <div id="pagination" class="w-fit mx-auto flex justify-between gap-[1rem] my-[3rem]"></div>
+</body>
+<script>
+    const blogsData = [
+        {
+            blog_image: "https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "This is the description for the first blog post.",
+            title: "First Blog Post",
+            date: "2023-01-05",
+            more: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio sed dolor consequat, nec varius purus bibendum.",
+            category: "Technology"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/280250/pexels-photo-280250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "Description for the second blog post goes here.",
+            title: "Second Blog Post",
+            date: "2023-02-12",
+            more: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            category: "Health"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/669986/pexels-photo-669986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "Description for the third blog post.",
+            title: "Third Blog Post",
+            date: "2023-03-20",
+            more: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            category: "Travel"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "This is the description for the fourth blog post.",
+            title: "Fourth Blog Post",
+            date: "2023-04-08",
+            more: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            category: "Fashion"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/2517483/pexels-photo-2517483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "Description for the fifth blog post goes here.",
+            title: "Fifth Blog Post",
+            date: "2023-05-15",
+            more: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            category: "Food"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/3845553/pexels-photo-3845553.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "Description for the sixth blog post.",
+            title: "Sixth Blog Post",
+            date: "2023-06-21",
+            more: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
+            category: "Art"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "Description for the seventh blog post.",
+            title: "Seventh Blog Post",
+            date: "2023-07-03",
+            more: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias.",
+            category: "Pets"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/1229860/pexels-photo-1229860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "This is the description for the eighth blog post.",
+            title: "Eighth Blog Post",
+            date: "2023-08-18",
+            more: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            category: "Science"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/6393795/pexels-photo-6393795.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "Description for the ninth blog post goes here.",
+            title: "Ninth Blog Post",
+            date: "2023-09-25",
+            more: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.",
+            category: "Nature"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/39517/rose-flower-blossom-bloom-39517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "Description for the tenth blog post.",
+            title: "Tenth Blog Post",
+            date: "2023-10-12",
+            more: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+            category: "Gardening"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "This is the description for the eleventh blog post.",
+            title: "Eleventh Blog Post",
+            date: "2023-11-19",
+            more: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+            category: "Education"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/159391/books-bookstore-book-reading-159391.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "Description for the twelfth blog post goes here.",
+            title: "Twelfth Blog Post",
+            date: "2023-12-27",
+            more: "Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
+            category: "Literature"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/47401/pexels-photo-47401.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "Description for the thirteenth blog post.",
+            title: "Thirteenth Blog Post",
+            date: "2024-01-04",
+            more: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.",
+            category: "Sports"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/376228/pexels-photo-376228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "This is the description for the fourteenth blog post.",
+            title: "Fourteenth Blog Post",
+            date: "2024-02-11",
+            more: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.",
+            category: "Music"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/39853/woman-girl-freedom-happy-39853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "Description for the fifteenth blog post goes here.",
+            title: "Fifteenth Blog Post",
+            date: "2024-03-18",
+            more: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            category: "Lifestyle"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/507410/pexels-photo-507410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "Description for the sixteenth blog post.",
+            title: "Sixteenth Blog Post",
+            date: "2024-04-25",
+            more: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            category: "Fitness"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/1393068/pexels-photo-1393068.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "This is the description for the seventeenth blog post.",
+            title: "Seventeenth Blog Post",
+            date: "2024-05-03",
+            more: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+            category: "Photography"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/34650/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "Description for the eighteenth blog post goes here.",
+            title: "Eighteenth Blog Post",
+            date: "2024-06-10",
+            more: "Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
+            category: "DIY"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/2102057/pexels-photo-2102057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "Description for the nineteenth blog post.",
+            title: "Nineteenth Blog Post",
+            date: "2024-07-17",
+            more: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.",
+            category: "History"
+        },
+        {
+            blog_image: "https://images.pexels.com/photos/50594/watering-can-flowers-garden-50594.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            description: "This is the description for the twentieth blog post.",
+            title: "Twentieth Blog Post",
+            date: "2024-08-24",
+            more: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+            category: "Environment"
+        },
+        // ... (add more objects as needed)
+    ];
+
+
+    const filterTab = (filterTabId) => {
+        const tabs = document.querySelectorAll('#tab > div');
+        console.log(tabs);
+
+        tabs?.forEach(tab => {
+            tab.classList.remove("border-b-[4px]", "border-[#6951A4]");
+        });
+
+        const tabSelected = document.getElementById(filterTabId);
+        tabSelected?.classList?.add("border-b-[4px]", "border-[#6951A4]");
+    }
+
+    const itemsPerPage = 6;
+    let currentPage = 1;
+
+    function displayBlogs(page) {
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const paginatedBlogs = blogsData.slice(startIndex, endIndex);
+
+        const blogContainer = document.getElementById('blogContainer');
+        blogContainer.innerHTML = '';
+
+        paginatedBlogs?.forEach((blog) => {
+            // HTML template string for blog content
+            const data = `<div class="blogContentContainer textInter shadow-sm flex flex-col items-center min-h-[40vh] w-[90%] mx-auto">
+            <div class="blogImg min-w-[100%] overflow-hidden max-h-[60vh] min-h-[60vh]">
+                <img src="${blog?.blog_image}" class="blogImageUrl object-cover h-[100%] w-[100%] object-center" alt="blogImageUrl" />
+            </div>
+            <div class="contentBlog w-[100%] flex flex-col items-start gap-[1rem] px-[1rem] py-[1rem] pb-[2rem] bg-[#fff]" style="background: url('./images/blog_blogcontent_background.svg'), lightgray 50% / cover no-repeat;">
+                <div class="flex w-[100%] justify-between">
+                    <p class="text-[#333] textInter text-[.875rem] font-[500]">${blog?.date}</p>
+                    <p class="text-[#313131] textInter text-[.875rem] font-[500]">${blog?.category}</p>
+                </div>
+                <div>
+                    <h2 class="text-[#222327] text-[1.25rem] textInter font-[600] leading-[2.5rem]">${blog?.title}</h2>
+                    <p class="text-[1rem] text-[#242A3C] textInter font-[400]">${blog?.description}</p>
+                </div>
+                <a class="text-[#000] uppercase textInter text-[1.25rem] font-[700]" href="#" style="text-decoration-line: underline;">Read more</a>
+            </div>
+        </div>`;
+
+            // Create a div element to render the blog content
+            const blogElement = document.createElement('div');
+            blogElement.innerHTML = data.trim(); // trim() removes any leading/trailing white spaces
+
+            const blogContent = blogElement.firstChild;
+            blogContainer.appendChild(blogContent);
+        });
+    }
+
+    function displayPagination() {
+        const totalPages = Math.ceil(blogsData.length / itemsPerPage);
+        const pagination = document.getElementById('pagination');
+        pagination.innerHTML = '';
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement('button');
+            pageButton.textContent = i;
+            pageButton.classList.add('rounded-[25px]', 'w-[3rem]', 'h-[3rem]', 'py-[.4rem]', 'px-[1rem]', 'border', 'border-solid');
+            pageButton.addEventListener('click', () => {
+                currentPage = i;
+                displayBlogs(currentPage);
+                updateActivePageButton();
+            });
+            pagination.appendChild(pageButton);
+        }
+
+        updateActivePageButton();
+    }
+
+    function updateActivePageButton() {
+        const buttons = document.querySelectorAll('#pagination button');
+
+        buttons.forEach((button, index) => {
+            if (index + 1 === currentPage) {
+                button.classList.add('bg-black', 'text-white'); // Apply styles for the active page
+            } else {
+                button.classList.remove('bg-black', 'text-white'); // Remove styles for other pages
+            }
+            // Add any other styles or logic for inactive pages here if needed
+        });
+    }
+
+    window.onload = function () {
+        const viewAllTab = document.getElementById('view_all');
+        viewAllTab?.click()
+        displayBlogs(currentPage);
+        displayPagination();
+    };
+
+
+
+</script>
+
+</html>

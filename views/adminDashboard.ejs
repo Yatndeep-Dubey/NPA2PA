@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>NPA2PA</title>
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="images/favicon.ico" />
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- Chart list Js -->
+      <link rel="stylesheet" href="./js/chartist/chartist.min.css">
+      <!-- Typography CSS -->
+      <link rel="stylesheet" href="css/typography.css">
+      <!-- Style CSS -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="css/responsive.css">
+      <style>
+        .table-fixed-column-outter {
+            position: relative;
+            margin: 2rem auto;
+            max-width: 50%;
+          }
+          .table-fixed-column-inner {
+            overflow-x: scroll;
+            overflow-y: visible;
+           
+            margin-left: 100px;
+            .table {
+              margin-bottom: 0.25rem;
+            }
+          }
+          .table.table-fixed-column {
+            table-layout: fixed;
+            width: 100%
+          }
+          
+          .table td,
+          .table th {
+            width: 100px;
+          }
+          
+          .table th:first-child,
+          .table tr td:first-child {
+            position: absolute;
+            left: 0;
+            width: 100px;
+          }
+      </style>
+   </head>
+   <body class="sidebar-main-active right-column-fixed header-top-bgcolor">
+      <!-- loader Start -->
+      <div id="loading">
+         <div id="loading-center">
+         </div>
+      </div>
+      <!-- loader END -->
+      <!-- Wrapper Start -->
+      <div class="wrapper">
+         <!-- Sidebar  -->
+         <div class="iq-sidebar">
+            <div class="iq-sidebar-logo d-flex justify-content-between">
+               <a href="index.html">
+               <div class="iq-light-logo">
+                  <div class="iq-light-logo">
+                     <img src="images/logo.svg" class="img-fluid" alt="">
+                   </div>
+                     <div class="iq-dark-logo">
+                        <img src="images/logo.svg" class="img-fluid" alt="">
+                     </div>
+               </div>
+               <div class="iq-dark-logo">
+                  <img src="images/logo.svg" class="img-fluid" alt="">
+               </div>
+               
+               </a>
+               <div class="iq-menu-bt-sidebar">
+                  <div class="iq-menu-bt align-self-center">
+                     <div class="wrapper-menu">
+                        <div class="main-circle"><i class="ri-arrow-left-s-line"></i></div>
+                        <div class="hover-circle"><i class="ri-arrow-right-s-line"></i></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="sidebar-scrollbar">
+               <nav class="iq-sidebar-menu">
+                  <ul id="iq-sidebar-toggle" class="iq-menu">
+                     <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Home</span></li>
+                     <li class="active">
+                        <a href="/admindashboard.html" class="iq-waves-effect"><i class="ri-home-4-line"></i><span>Dashboard</span></a>
+                     </li>
+                     <li>
+                        <a href="/booking.html" class="iq-waves-effect"><i class="ri-home-4-line"></i><span>Booking</span></a>
+                     </li>
+                      
+                     <li>
+                        <a href="#userinfo" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-user-line"></i><span>Join Us</span></a>
+                     </li>
+                     <li>
+                        <a href="#userinfo" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-user-line"></i><span>Enquiries</span></a>
+                     </li>  <li>
+                        <a href="/adminDwld.html" class="iq-waves-effect"><i class="ri-user-line"></i><span>Download Docs</span></a>
+                     </li>  <li>
+                        <a href="#userinfo" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-user-line"></i><span>Terms & Conditions</span></a>
+                     </li>  <li>
+                        <a href="#userinfo" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-user-line"></i><span>Privacy POlicy</span></a>
+                     </li>  <li>
+                        <a href="#userinfo" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-user-line"></i><span>Refund Policy</span></a>
+                     </li>  <li>
+                        <a href="#userinfo" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-user-line"></i><span>Update GST Plan</span></a>
+                     </li>
+                     <li>
+                        <a href="#userinfo" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-user-line"></i><span>Purchase Request</span></a>
+                     </li>
+                   
+                  </ul>
+               </nav>
+               <div class="p-3"></div>
+            </div>
+         </div>
+         <!-- TOP Nav Bar -->
+         <div class="iq-top-navbar">
+            <div class="iq-navbar-custom" style="width: 135%;">
+               <div class="iq-sidebar-logo">
+                  <div class="top-logo">
+                     <a href="index.html" class="logo">
+                     <div class="iq-light-logo">
+                  <img src="images/logo.gif" class="img-fluid" alt="">
+               </div>
+               <div class="iq-dark-logo">
+                  <img src="images/logo-dark.gif" class="img-fluid" alt="">
+               </div>
+                     <span>vito</span>
+                     </a>
+                  </div>
+               </div>
+               <nav class="navbar navbar-expand-lg navbar-light p-0">
+                  <div class="navbar-left">
+                     <div class="iq-search-bar d-none d-md-block">
+                        <form action="#" class="searchbox">
+                           <input type="text" class="text search-input" placeholder="Type here to search...">
+                           <a class="search-link" href="#"><i class="ri-search-line"></i></a>
+                           <div class="searchbox-datalink">
+                             <h6 class="pl-3 pt-3 pb-3">Pages</h6>
+                              <ul class="m-0 pl-3 pr-3 pb-3">
+                                 <li class="iq-bg-primary-hover rounded"><a href="index.html" class="nav-link router-link-exact-active router-link-active pr-2"><i class="ri-home-4-line pr-2"></i>Dashboard</a></li>
+                                 <li class="iq-bg-primary-hover rounded"><a href="dashboard-1.html" class="nav-link router-link-exact-active router-link-active pr-2"><i class="ri-home-3-line pr-2"></i>Dashboard-1</a></li>
+                                 <li class="iq-bg-primary-hover rounded"><a href="chat.html" class="nav-link"><i class="ri-message-line pr-2"></i>Chat</a></li>
+                                 <li class="iq-bg-primary-hover rounded"><a href="calendar.html" class="nav-link"><i class="ri-calendar-2-line pr-2"></i>Calendar</a></li>
+                                 <li class="iq-bg-primary-hover rounded"><a href="profile.html" class="nav-link"><i class="ri-profile-line pr-2"></i>Profile</a></li>
+                                 <li class="iq-bg-primary-hover rounded"><a href="todo.html" class="nav-link"><i class="ri-chat-check-line pr-2"></i>Todo</a></li>
+                                 <li class="iq-bg-primary-hover rounded"><a href="app/index.html" class="nav-link"><i class="ri-mail-line pr-2"></i>Email</a></li>
+                                 <li class="iq-bg-primary-hover rounded"><a href="e-commerce-product-list.html" class="nav-link"><i class="ri-message-line pr-2"></i>Product Listing</a></li>
+                                 <li class="iq-bg-primary-hover rounded"><a href="e-commerce-product-detail.html" class="nav-link"><i class="ri-file-list-line pr-2"></i>Product Details</a></li>
+                                 <li class="iq-bg-primary-hover rounded"><a href="pages-faq.html" class="nav-link"><i class="ri-compasses-line pr-2"></i>Faq</a></li>
+                                 <li class="iq-bg-primary-hover rounded"><a href="form-wizard.html" class="nav-link"><i class="ri-clockwise-line pr-2"></i>Form-wizard</a></li>
+                              </ul>
+                           </div>
+                        </form>
+                     </div>
+                
+               </div>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-label="Toggle navigation">
+                  <i class="ri-menu-3-line"></i>
+                  </button>
+                  <div class="iq-menu-bt align-self-center">
+                     <div class="wrapper-menu">
+                        <div class="main-circle"><i class="ri-arrow-left-s-line"></i></div>
+                        <div class="hover-circle"><i class="ri-arrow-right-s-line"></i></div>
+                     </div>
+                  </div>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     
+                  </div>
+                  <ul class="navbar-list">
+                     <li>
+                        <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center bg-primary rounded">
+                           <img src="images/user/1.jpg" class="img-fluid rounded mr-3" alt="user">
+                           <div class="caption">
+                              <h6 class="mb-0 line-height text-white">Nik jone</h6>
+                              <span class="font-size-12 text-white">Available</span>
+                           </div>
+                        </a>
+                        <div class="iq-sub-dropdown iq-user-dropdown">
+                           <div class="iq-card shadow-none m-0">
+                              <div class="iq-card-body p-0 ">
+                                 <div class="bg-primary p-3">
+                                    <h5 class="mb-0 text-white line-height">Hello Nik jone</h5>
+                                    <span class="text-white font-size-12">Available</span>
+                                 </div>
+                                 <a href="profile.html" class="iq-sub-card iq-bg-primary-hover">
+                                    <div class="media align-items-center">
+                                       <div class="rounded iq-card-icon iq-bg-primary">
+                                          <i class="ri-file-user-line"></i>
+                                       </div>
+                                       <div class="media-body ml-3">
+                                          <h6 class="mb-0 ">My Profile</h6>
+                                          <p class="mb-0 font-size-12">View personal profile details.</p>
+                                       </div>
+                                    </div>
+                                 </a>
+                                 <a href="profile-edit.html" class="iq-sub-card iq-bg-primary-hover">
+                                    <div class="media align-items-center">
+                                       <div class="rounded iq-card-icon iq-bg-primary">
+                                          <i class="ri-profile-line"></i>
+                                       </div>
+                                       <div class="media-body ml-3">
+                                          <h6 class="mb-0 ">Edit Profile</h6>
+                                          <p class="mb-0 font-size-12">Modify your personal details.</p>
+                                       </div>
+                                    </div>
+                                 </a>
+                                 <a href="account-setting.html" class="iq-sub-card iq-bg-primary-hover">
+                                    <div class="media align-items-center">
+                                       <div class="rounded iq-card-icon iq-bg-primary">
+                                          <i class="ri-account-box-line"></i>
+                                       </div>
+                                       <div class="media-body ml-3">
+                                          <h6 class="mb-0 ">Account settings</h6>
+                                          <p class="mb-0 font-size-12">Manage your account parameters.</p>
+                                       </div>
+                                    </div>
+                                 </a>
+                                 <a href="privacy-setting.html" class="iq-sub-card iq-bg-primary-hover">
+                                    <div class="media align-items-center">
+                                       <div class="rounded iq-card-icon iq-bg-primary">
+                                          <i class="ri-lock-line"></i>
+                                       </div>
+                                       <div class="media-body ml-3">
+                                          <h6 class="mb-0 ">Privacy Settings</h6>
+                                          <p class="mb-0 font-size-12">Control your privacy parameters.</p>
+                                       </div>
+                                    </div>
+                                 </a>
+                                 <div class="d-inline-block w-100 text-center p-3">
+                                    <a class="btn btn-primary dark-btn-primary" href="sign-in.html" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </nav>
+               
+
+            </div>
+         </div>
+         <!-- TOP Nav Bar END -->
+         <!-- Page Content  -->
+         <div id="content-page" class="content-page">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-sm-6 col-md-6 col-lg-3">
+                     <div class="iq-card iq-card-block iq-card-stretch ">
+                        <div class="iq-card-body">
+                                <div class="d-flex d-flex align-items-center justify-content-between">
+                                   <div>
+                                       <h2>352</h2>
+                                       <p class="fontsize-sm m-0">Invoice Sent</p>
+                                   </div>
+                                   <div class="rounded-circle iq-card-icon dark-icon-light iq-bg-primary "> <i class="">+</i></div>
+                                </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6 col-lg-3">
+                     <div class="iq-card iq-card-block iq-card-stretch ">
+                        
+                        <div class="iq-card-body">
+                           <div class="d-flex d-flex align-items-center justify-content-between">
+                              <div>
+                                  <h2>$37k</h2>
+                                  <p class="fontsize-sm m-0">Credited</p>
+                              </div>
+                              <div class="rounded-circle iq-card-icon iq-bg-danger"><i class="">+</i></div>
+                           </div>
+                         </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6 col-lg-3">
+                     <div class="iq-card iq-card-block iq-card-stretch ">
+                        <div class="iq-card-body">
+                           <div class="d-flex d-flex align-items-center justify-content-between">
+                              <div>
+                                  <h2>32%</h2>
+                                  <p class="fontsize-sm m-0">Employee Costs</p>
+                              </div>
+                              <div class="rounded-circle iq-card-icon iq-bg-warning "><i class="">+</i></div>
+                           </div>
+                       </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6 col-lg-3">
+                     <div class="iq-card iq-card-block iq-card-stretch ">
+                        <div class="iq-card-body">
+                           <div class="d-flex d-flex align-items-center justify-content-between">
+                              <div>
+                                  <h2>27h</h2>
+                                  <p class="fontsize-sm m-0">Payment Delay</p>
+                              </div>
+                              <div class="rounded-circle iq-card-icon iq-bg-info "><i class="">+</i></div>
+                           </div>
+                       </div>
+                     </div>
+                  </div>
+               </div>
+              
+             
+               </div>
+              
+               </div>
+              
+              
+         </div>
+ 
+         <!-- <div class="iq-right-fixed">
+            <div class="iq-card mb-0" style="box-shadow: none;">
+               <div class="iq-card-header d-flex justify-content-between">
+                  <div class="iq-header-title">
+                     <h4 class="card-title">Customer Distribution</h4>
+                  </div>
+                  <div class="iq-card-header-toolbar d-flex align-items-center">
+                     <div class="dropdown">
+                       <span class="dropdown-toggle" id="dropdownMenuButton-five" data-toggle="dropdown">
+                        <a href="#">See All</a>
+                        </span>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton-five">
+                           <a class="dropdown-item" href="#"><i class="ri-eye-fill mr-2"></i>View</a>
+                           <a class="dropdown-item" href="#"><i class="ri-delete-bin-6-fill mr-2"></i>Delete</a>
+                           <a class="dropdown-item" href="#"><i class="ri-pencil-fill mr-2"></i>Edit</a>
+                           <a class="dropdown-item" href="#"><i class="ri-printer-fill mr-2"></i>Print</a>
+                           <a class="dropdown-item" href="#"><i class="ri-file-download-fill mr-2"></i>Download</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="iq-card-body">
+                  <div id="chartdiv"></div>
+               </div>
+            </div>
+            <div class="iq-card mb-0" style="box-shadow: none;">
+               <div class="iq-card-header d-flex justify-content-between">
+                  <div class="iq-header-title">
+                     <h4 class="card-title">Project Statistic</h4>
+                  </div>
+               </div>
+                <div class="iq-card-body">
+                  <ul class="suggestions-lists m-0 p-0">
+                     <li class="d-flex mb-4 align-items-center">
+                        <div class="profile-icon iq-bg-danger"><span>G</span></div>
+                        <div class="media-support-info ml-3">
+                           <h6>Adding Item</h6>
+                           <p class="mb-0 fontsize-sm">Development</p>
+                        </div>
+                        <div class="iq-card-header-toolbar d-flex align-items-center">
+                           <div class="dropdown">
+                              <span class="dropdown-toggle text-primary" id="dropdownMenuButton41" data-toggle="dropdown">
+                              <i class="ri-more-line"></i>
+                              </span>
+                              <div class="dropdown-menu dropdown-menu-right p-0">
+                                 <a class="dropdown-item" href="#"><i class="ri-user-unfollow-line mr-2"></i>Unfollow</a>
+                                 <a class="dropdown-item" href="#"><i class="ri-close-circle-line mr-2"></i>Unfriend</a>
+                                 <a class="dropdown-item" href="#"><i class="ri-lock-line mr-2"></i>block</a>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="d-flex align-items-center">
+                        <div class="profile-icon iq-bg-warning"><span>B</span></div>
+                        <div class="media-support-info ml-3">
+                           <h6>Admin Panel</h6>
+                           <p class="mb-0 fontsize-sm">Development</p>
+                        </div>
+                        <div class="iq-card-header-toolbar d-flex align-items-center">
+                           <div class="dropdown">
+                              <span class="dropdown-toggle text-primary" id="dropdownMenuButton42" data-toggle="dropdown">
+                              <i class="ri-more-line"></i>
+                              </span>
+                              <div class="dropdown-menu dropdown-menu-right p-0">
+                                 <a class="dropdown-item" href="#"><i class="ri-user-unfollow-line mr-2"></i>Unfollow</a>
+                                 <a class="dropdown-item" href="#"><i class="ri-close-circle-line mr-2"></i>Unfriend</a>
+                                 <a class="dropdown-item" href="#"><i class="ri-lock-line mr-2"></i>block</a>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="iq-card" style="box-shadow: none;">
+               <div class="iq-card-header d-flex justify-content-between">
+                  <div class="iq-header-title">
+                     <h4 class="card-title">Countries</h4>
+                  </div>
+                  <div class="iq-card-header-toolbar d-flex align-items-center">
+                     <div class="dropdown">
+                        <span class="dropdown-toggle text-primary" id="dropdownMenuButton6" data-toggle="dropdown">
+                        <i class="ri-more-2-fill"></i>
+                        </span>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton6">
+                           <a class="dropdown-item" href="#"><i class="ri-eye-fill mr-2"></i>View</a>
+                           <a class="dropdown-item" href="#"><i class="ri-delete-bin-6-fill mr-2"></i>Delete</a>
+                           <a class="dropdown-item" href="#"><i class="ri-pencil-fill mr-2"></i>Edit</a>
+                           <a class="dropdown-item" href="#"><i class="ri-printer-fill mr-2"></i>Print</a>
+                           <a class="dropdown-item" href="#"><i class="ri-file-download-fill mr-2"></i>Download</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="iq-card-body">
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div class="iq-details">
+                           <div class="d-flex align-items-center justify-content-between">
+                              <h6 class="title text-dark">United States</h6>
+                              <div class="percentage float-right text-primary">95 <span>%</span></div>
+                           </div>
+                           <div class="iq-progress-bar-linear d-inline-block w-100">
+                              <div class="iq-progress-bar">
+                                 <span class="bg-primary" data-percent="95"></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="iq-details mt-3">
+                           <div class="d-flex align-items-center justify-content-between">
+                              <h6 class="title text-dark">India</h6>
+                              <div class="percentage float-right text-warning">75 <span>%</span></div>
+                           </div>
+                           <div class="iq-progress-bar-linear d-inline-block w-100">
+                              <div class="iq-progress-bar">
+                                 <span class="bg-warning" data-percent="75"></span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div> -->
+
+   <!--- Wrapper end-->
+      
+      <!-- Footer END -->
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      
+      <script src="js/jquery.min.js"></script>
+      
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Appear JavaScript -->
+      <script src="js/jquery.appear.js"></script>
+      <!-- Countdown JavaScript -->
+      <script src="js/countdown.min.js"></script>
+      <!-- Counterup JavaScript -->
+      <script src="js/waypoints.min.js"></script>
+      <script src="js/jquery.counterup.min.js"></script>
+      <!-- Wow JavaScript -->
+      <script src="js/wow.min.js"></script>
+      <!-- Apexcharts JavaScript -->
+      <script src="js/apexcharts.js"></script>
+      <!-- Slick JavaScript -->
+      <script src="js/slick.min.js"></script>
+      <!-- Select2 JavaScript -->
+      <script src="js/select2.min.js"></script>
+      <!-- Magnific Popup JavaScript -->
+      <script src="js/jquery.magnific-popup.min.js"></script>
+      <!-- Smooth Scrollbar JavaScript -->
+      <script src="js/smooth-scrollbar.js"></script>
+      <!-- lottie JavaScript -->
+      <script src="js/lottie.js"></script>
+      <!-- am core JavaScript -->
+      <script src="js/core.js"></script>
+      <!-- am charts JavaScript -->
+      <script src="js/charts.js"></script>
+      <!-- am animated JavaScript -->
+      <script src="js/animated.js"></script>
+      <!-- am kelly JavaScript -->
+      <script src="js/kelly.js"></script>
+      <!-- Morris JavaScript -->
+      <script src="js/morris.js"></script>
+      <!-- am maps JavaScript -->
+      <script src="js/maps.js"></script>
+      <!-- am worldLow JavaScript -->
+      <script src="js/worldLow.js"></script>
+      <!-- ChartList Js -->
+      <script src="js/chartist/chartist.min.js"></script>
+      <!-- Chart Custom JavaScript -->
+      <script async src="js/chart-custom.js"></script>
+      <!-- Custom JavaScript -->
+      <script src="js/custom.js"></script>
+   </body>
+</html>

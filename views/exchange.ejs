@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchng</title>
+     <!-- tailwind CDN -->
+     <script src="https://cdn.tailwindcss.com"></script>
+     <!---CSS Link-->
+     <link rel="stylesheet" href="home.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+     <!--font link-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300&family=Roboto:wght@700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300;600&family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+<style>
+    .boxshadow{
+        box-shadow: -15px 15px 0px 0px #80DED9;
+    }
+    .accordion__header {
+        padding: 1em;
+        display: flex;
+      /*  justify-content: space-between; */
+        align-items: center;
+        cursor: pointer;
+      }
+      .accordion__header > * {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 16px;
+      }
+      .accordion__header.is-active {
+        color: black;
+      }
+      
+      .accordion__toggle {
+        content: "+";
+        color:black;
+        margin-left: 10px;
+        font-size: 22px;
+        font-weight: bolder;
+        display: block;
+        position: relative;
+        flex-shrink: 1;
+        border-radius: 2px;
+      }
+      
+      .accordion__toggle::before {
+        content: "+";
+        width: 3px;
+        height: 13px;
+        display: block;
+        /* background-color: #222; */
+        position: absolute;
+        top: -5px;
+        left: 5px;
+        border-radius: 2px;
+      }
+      
+      .is-active {
+        border: none;
+      }
+      
+      .is-active .accordion__toggle {
+        background-color:black;
+        margin-top: 2rem;
+      }
+      .is-active .accordion__toggle::before {
+        display: none;
+      }
+      .accordion__body {
+        display: none;
+        padding: 1em;
+      
+          border-left: 0px;
+          border-right: 0px;
+        border-top: 0;
+      }
+      .accordion__body.is-active {
+        display: block;
+      }
+      
+</style>
+<body>
+      <!--section 1-->
+      <section class=" h-auto">
+        <div class="lg:flex mx-12">
+        <div class="w-[65%]">
+           <div class="text-8xl font-extrabold pt-24"> <p class="sec8">Exchange Land</p>
+           </div>
+           <p class="text-5xl text-black mt-12 textInter">What is Exchange Land ?</p>
+           <p class="text-2xl text-[#8A8A8A] mt-4 pr-36">
+            Land optimizer has extensive experience in property exchanges for individuals as well as B2B property exchange . The reasons for seeking a replacement property can include and go beyond: 
+           </p>   
+       </div>  
+         <div class="w-[35%]">
+            <img src="images/exchange_sec1.svg" alt="main image" class="h-full float-right">
+         </div>
+
+        </div>
+    </section>
+
+    <!--Section 2-->
+    <section>
+      <div class="flex justify-center mt-8">
+        <img src="images/exchange_sec2.svg" alt="" class="w-[92%] mx-12">  
+      </div>
+       <p class="text-2xl text-[#8A8A8A] mt-8 mx-12">
+        Land optimizer has extensive experience in property exchanges for individuals as well as B2B property exchange . The reasons for seeking a replacement property can include and go beyond: 
+       </p> 
+    </section>   
+
+    <!--Section 3-->
+    <section class="mx-12">
+        <p class="text-5xl text-black mt-12 textInter">What can be Exchanged ?</p> 
+        <p class="text-2xl text-[#8A8A8A] mt-8">
+            Here’s the list of different types of property that can be exchanged 
+        </p> 
+        <p class="text-2xl text-[#8A8A8A] mt-8">
+            • Agricultural land &emsp; • Converted land &emsp;  • Approved land &emsp; • Undeveloped plot &emsp; • Developed plot &emsp; • Villa &emsp; • Apartment
+        </p>   
+        <img src="images/exchange_sec3.svg" alt="" class="w-full mt-8">  
+    </section>
+
+    <!--Section 4-->
+    <section class="mx-12 mt-12 textInter">
+      <div class="flex">  
+        <div class="w-[70%] h-auto">
+            <div class="w-[70%] h-16 bg-[#80DED9] text-white text-center text-4xl py-4">OUR EXCHANGE MODELS</div>
+            <p class="text-xl text-[#707070] mt-4 mr-4">Land Optimizer offers multiple exchange models that add to your convenience. You have the option to choose a model that works best for you</p>
+            
+            <div class="w-[50%] h-12 bg-[#5BBDD7] text-white text-center text-2xl mt-12 pt-2">Simultaneous Exchange</div>
+            <div class="mr-8 border-2 border-t-0 border-[#808080]"></div>
+            <p class="text-lg text-[#707070] mt-4 mr-4">In a simultaneous exchange, both, the relinquished property and the replacement
+                property are exchanged at the same time.</p>
+
+          <div class="w-[50%] h-12 bg-[#5BBDD7] text-white text-center text-2xl mt-12 pt-2">Forward Exchange</div>
+                <div class="mr-8 border-2 border-t-0 border-[#808080]"></div>
+                <p class="text-lg text-[#707070] mt-4 mr-4">In a forward exchange the existing property is relinquished first and the
+                    replacement property acquired after a period of time.</p>    
+                 
+           <div class="w-[50%] h-12 bg-[#5BBDD7] text-white text-center text-2xl mt-12 pt-2">Reverse Exchange</div>
+                    <div class="mr-8 border-2 border-t-0 border-[#808080]"></div>
+                    <p class="text-lg text-[#707070] mt-4 mr-4">In a reverse exchange, the replacement property is acquired first and the
+                        existing property relinquished at a later date.</p>      
+           <div class="w-[50%] h-12 bg-[#5BBDD7] text-white text-center text-2xl mt-12 pt-2">Multi-asset Exchange</div>
+                        <div class="mr-8 border-2 border-t-0 border-[#808080]"></div>
+                        <p class="text-lg text-[#707070] mt-4 mr-4">In a multi-asset exchange, a single asset could be replaced by two or more other asset. The reverse, where two or more assets are replaced by a single asset, too, falls in this category.</p>                
+        </div>
+
+        <div class="w-[30%] h-auto border-2 border-y-0 border-[#808080] border-r-0">
+            <p class="text-3xl text-black font-bold textInter mx-8">ABOUT LAND OPTIMIZER</p>  
+            <p class="text-xl text-[#707070] mt-4 mx-8">
+                At Land Optimizer
+International, we revolutionize
+the real estate industry by
+utilizing technology and ideas.
+We are here to bring the real
+estate of the future through
+strategies built on medium and
+long-term perspective that
+mitigate risks, build resilience,
+identify opportunities and
+structural shifts to deal with
+future adversities that the real
+estate industry may face.
+Specializing in turning idle
+assets into income-generating
+ones, we optimize your
+property through concepts
+that work as an alternate
+investment that generates a
+second income. We offer land
+pooling, property sharing, and
+land acquisition. Expanding
+our services, we cater to land,
+theme and concept
+development with high
+productivity and awareness
+of quality.
+               </p>   
+        </div>
+
+      </div>
+
+      <div class="w-full h-12 text-3xl text-center text-[#707070] border-[#808080] border-2 mt-12">THE LAND OPTIMIZER ADVANTAGE</div>
+
+      <img src="images/exchange_sec4.svg" alt="adavantage" class="mt-8">
+    </section>
+
+    <!--Section 5-->
+    <section class="mx-12 mt-12 textInter">
+        <div class="h-auto w-full bg-[#3C3C3C] rounded-xl pb-28">
+            <p class="text-white text-6xl text-center pt-12">Benefits</p>
+
+            <div class="flex mx-8 mt-16 textInter">
+                <div class="w-1/3 h-auto bg-white rounded-2xl mx-4 pb-4 boxshadow">
+                    <img src="images/home_sec6_card1.svg" alt="" class="mx-auto h-24 mt-4">
+                    <p class="text-2xl text-center mt-4">Startup Friendly</p>
+                    <p class="text-center mx-4 text-md mt-2">Lorem ipsum dolor sit amet, consec 
+                        adipiscing elit. Fusce finibus enim
+                    </p>
+                </div>
+                <div class="w-1/3 h-auto bg-white shadow-2xl rounded-2xl mx-4 pb-4">
+                    <img src="images/home_sec6_card2.svg" alt="" class="mx-auto h-24 mt-4">
+                    <p class="text-2xl text-center mt-4">Affordable & Transparent</p>
+                    <p class="text-center mx-4 text-md mt-2">Lorem ipsum dolor sit amet, consec 
+                        adipiscing elit. Fusce finibus enim
+                    </p>
+                </div>           
+                <div class="w-1/3 h-auto bg-white shadow-2xl rounded-2xl mx-4 pb-4">
+                    <img src="images/home_sec6_card3.svg" alt="" class="mx-auto h-24 mt-4">
+                    <p class="text-2xl text-center mt-4">On-Time Delivery</p>
+                    <p class="text-center mx-4 text-md mt-2">Lorem ipsum dolor sit amet, consec 
+                        adipiscing elit. Fusce finibus enim
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Section 6-->
+    <section class="mx-12 mt-12 textInter bg-[#F6F5EF]">
+        <p class="text-7xl text-center font-extrabold textPoppins pt-12">Key</p>
+        <p class="text-5xl text-center textInter">Registration</p>
+         
+        <div class="flex mt-24">
+            <div class="w-1/2">
+                <div class="flex mx-4">
+                  <img src="images/exchange_sec6_icon.svg" alt="" class="">
+                  <p class="mx-4 text-2xl font-semibold">MSME registration</p>
+                </div>
+                <p class="px-[5.5rem] text-[#444444]">MSME or Udyog Aadhaar registration to be obtained in the name of business to establish that partnership firm is registered with the Ministry of Micro, Small and Medium Enterprises.</p>
+            </div>
+            <div class="w-1/2">
+                <div class="flex">
+                    <img src="images/exchange_sec6_icon.svg" alt="">
+                    <p class="mx-4 text-2xl font-semibold">Import Export code</p>
+                  </div>
+                  <p class="pl-[4.8rem] pr-8 text-[#444444]">Import Export Code or IE code is obtained from the DGFT in case Pvt Ltd firm business do export /import of from India.</p>
+            </div>
+        </div>
+            <!--card 2-->
+            <div class="flex mt-12">
+                <div class="w-1/2">
+                    <div class="flex mx-4">
+                      <img src="images/exchange_sec6_icon.svg" alt="">
+                      <p class="mx-4 text-2xl font-semibold">TAN registration</p>
+                    </div>
+                    <p class="px-[5.5rem] text-[#444444]">TAN registration must be obtained for Pvt Ltd firm from income tax department if the partnership firm is required to deduct any TDS while making any payments as per Income Tax Act 1961.</p>
+                </div>
+                <div class="w-1/2">
+                    <div class="flex">
+                        <img src="images/exchange_sec6_icon.svg" alt="">
+                        <p class="mx-4 text-2xl font-semibold">FSSAI registration</p>
+                      </div>
+                      <p class="px-[4.8rem] text-[#444444]">In case partnership firm involved in selling of food products or handling of food products, FSSAI registration must be obtained from Food Safety and Standard Authority of India in the name of Pvt Ltd firm.</p>
+                </div>
+            </div>
+            
+          <!---Card 3-->  
+          <div class="flex mt-12">
+            <div class="w-1/2">
+                <div class="flex mx-4">
+                  <img src="images/exchange_sec6_icon.svg" alt="">
+                  <p class="mx-4 text-2xl font-semibold">GST registration</p>
+                </div>
+                <p class="px-[5.5rem] text-[#444444]">GST registration must be obtained if Pvt Ltd firm is selling goods or services that cross GST turnover threshold limit for registration. In most states, GST registration is required for service providers having annual revenue of more than Rs 20 lakhs and in case of traders-annual revenue of more than Rs. 40 lakhs.</p>
+            </div>
+            <div class="w-1/2">
+                <div class="flex">
+                    <img src="images/exchange_sec6_icon.svg" alt="">
+                    <p class="mx-4 text-2xl font-semibold">Current account</p>
+                  </div>
+                  <p class="px-[4.8rem] text-[#444444]">A current account can be opened for partnership firm in any banks in India. We offers exclusive partnerships through which zero-balance current accounts can be opened.</p>
+            </div>
+        </div>
+        <!---Card 4-->
+        <div class="flex mt-12">
+            <div class="w-1/2">
+                <div class="flex mx-4">
+                  <img src="images/exchange_sec6_icon.svg" alt="">
+                  <p class="mx-4 text-2xl font-semibold">Shop & Establishment License</p>
+                </div>
+                <p class="px-[5.5rem] text-[#444444]">We will register for Shop & Establishment license if needed as per the criteria.</p>
+            </div>
+            
+        </div>
+
+    </section>
+
+     <!--Section 6-->
+     <section class="mx-12 mt-12 ">
+        <p class="text-7xl text-center font-extrabold textPoppins pt-12">Annual</p>
+        <p class="text-5xl text-center textPoppins">Compliance</p>
+        <div class="flex mt-24 textInter">
+            <div class="h-32 w-1/2">
+              <div class="flex"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl">GST Return Filing</p> </div>
+              <div class="flex mt-4"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl">Income Tax Return Filing</p>
+              </div>
+              <div class="flex mt-4"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl">TDS Return Filing</p>
+              </div>
+              <div class="flex mt-4"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl">Tax audit as required by Income tax act,1961</p>
+              </div>
+              <div class="flex mt-4"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl">Preparation of Financial Statements
+            </p>
+              </div>
+              <div class="flex mt-4"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl">Income Tax Return Filing</p>
+              </div>
+              <div class="flex mt-4"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl">Sale and purchase invoice documenation
+            </p>
+              </div>
+              <div class="flex mt-4"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl ">All business profits are income of a partnership firm and pay self-assessment tax on those profits
+            </p>
+              </div>
+            </div>
+            <div class="w-1/2">
+                <img src="images/exchange_sec6_leftIMG.svg" alt="sec7" class="h-[30rem] float-right">
+            </div>
+        </div>
+     </section>
+
+     <!---Section 7 HOW IT WORKS-->
+
+        <!--Section 8-->
+        <section class="mx-12 mt-12">
+            <p class="text-7xl text-center font-extrabold textPoppins pt-12 textPoppins">Documents to be</p>
+            <p class="text-5xl text-center textPoppins">Uploaded</p>
+            <div class="flex mt-24 textInter">
+                <div class="h-32 w-1/2">
+                  <div class="flex"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl">PAN Copy</p> </div>
+                  <div class="flex mt-4"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl">Aadhaar Copy/Voter's ID/Passport/Driver's License
+                </p>
+                  </div>
+                  <div class="flex mt-4"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl">Rental Agreement</p>
+                  </div>
+                  <div class="flex mt-4"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl">Sale Deed Agreement</p>
+                  </div>
+                  <div class="flex mt-4"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl">Passport Photo                </p>
+                  </div>
+                  <div class="flex mt-4"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl">Electricity Bill Latest</p>
+                  </div>
+                  <div class="flex mt-4"> <img src="images/exchange_sec6_icon.svg" alt="" class="mx-4"> <p class="text-2xl">Other Document                </p>
+                  </div>
+                 
+                </div>
+                <div class="w-1/2">
+                    <img src="images/exchange_sec8_leftIMG.svg" alt="sec7" class="h-[30rem] float-right">
+                </div>
+            </div>
+         </section>
+
+     <!---Section 9 PAY AS YOU GROW-->
+
+      <!--Section 10-->
+      <section class="mt-12 h-auto pb-8 bg-[#F6F5EF]">
+        <p class="text-7xl  font-extrabold textPoppins pt-12 textPoppins mx-12">Frequently Asked</p>
+        <p class="text-5xl mx-12 textPoppins">Questions</p>
+        <div class="flex mt-8 textInter">
+          <div class="h-32 w-[80%]">
+            <section class="lg:flex flex-row mx-8 mt-8 text-k2d">
+                <div class="container">
+                  <div class="accordion">
+                    <div
+                      class="accordion__header is-activ mx-4  -mb-8"
+                     >
+                     <span
+                     class="accordion__toggle h-[3px] lg:w-[18px] md:w-[22px] sm:w-[14px] w-[27px]"
+                   ></span>
+                      <h2 class="text-sm lg:text-lg font-bold pt-[1.5rem] ml-[2rem]">
+                        Who can form a Sole Prorietorship firm?
+                                            </h2>
+                    
+                    </div>
+                    <div
+                      class="accordion__body is-activ mx-4 "
+                    >
+                      <p class="px-[3.7rem]">
+                        An Indian National with a current bank account on a business name
+is eligible for forming a sole proprietorship Firm. Generally, banks 
+ask a customer for a Shops and Establishments license prior to 
+opening a current bank account.
+                      </p>
+                    </div>
+                    <!--1 st end-->
+                    <div
+                      class="accordion__header is-activ mx-4  -mb-8"
+                     >
+                     <span
+                     class="accordion__toggle h-[3px] lg:w-[18px] md:w-[22px] sm:w-[14px] w-[27px]"
+                   ></span>
+                      <h2 class="text-sm lg:text-lg font-bold pt-[1.5rem] ml-[2rem]">
+                        What kind of liability does a sole proprietor have?
+                      </h2>
+                    
+                    </div>
+                    <div
+                      class="accordion__body is-activ mx-4 "
+                    >
+                      <p class="px-[3.7rem]">
+                        M quickly assesses your financial information to determine
+                        eligibility and can facilitate a rapid pre-approval process,
+                        guiding you efficiently towards your goal of homeownership.
+                      </p>
+                    </div>
+                    <!--2nnd end-->
+                  
+                    <div
+                      class="accordion__header is-activ mx-4  -mb-8"
+                     >
+                     <span
+                     class="accordion__toggle h-[3px] lg:w-[18px] md:w-[22px] sm:w-[14px] w-[27px]"
+                   ></span>
+                      <h2 class="text-sm lg:text-lg font-bold pt-[1.5rem] ml-[2rem]">
+                        Does a sole proprietor have any mandatory registration requirement?
+                      </h2>
+                    
+                    </div>
+                    <div
+                      class="accordion__body is-activ mx-4 "
+                    >
+                      <p class="px-[3.7rem]">
+                        M quickly assesses your financial information to determine
+                        eligibility and can facilitate a rapid pre-approval process,
+                        guiding you efficiently towards your goal of homeownership.
+                      </p>
+                    </div>
+                    <!--3rd end-->
+        
+                    
+                    <div
+                      class="accordion__header is-activ mx-4  -mb-8"
+                     >
+                     <span
+                     class="accordion__toggle h-[3px] lg:w-[18px] md:w-[22px] sm:w-[14px] w-[27px]"
+                   ></span>
+                      <h2 class="text-sm lg:text-lg font-bold pt-[1.5rem] ml-[2rem]">
+                        Can Sole proprietor be converted to other forms of business?
+                      </h2>
+                    
+                    </div>
+                    <div
+                      class="accordion__body is-activ mx-4 "
+                    >
+                      <p class="px-[3.7rem]">
+                        M  quickly assesses your financial information to determine
+                        eligibility and can facilitate a rapid pre-approval process,
+                        guiding you efficiently towards your goal of homeownership.
+                      </p>
+                    </div>
+                    <!--4th end-->
+        
+                      <!--1 st end-->
+                    <div
+                      class="accordion__header is-activ mx-4  -mb-8"
+                     >
+                     <span
+                     class="accordion__toggle h-[3px] lg:w-[18px] md:w-[22px] sm:w-[14px] w-[27px]"
+                   ></span>
+                      <h2 class="text-sm lg:text-lg font-bold pt-[1.5rem] ml-[2rem]">
+                        How Income is taxed under sole proprietorship?
+                      </h2>
+                    
+                    </div>
+                    <div
+                      class="accordion__body is-activ mx-4 "
+                    >
+                      <p class="px-[3.7rem]">
+                        M quickly assesses your financial information to determine
+                        eligibility and can facilitate a rapid pre-approval process,
+                        guiding you efficiently towards your goal of homeownership.
+                      </p>
+                    </div>
+                    <!--5th end-->
+                      <!--1 st end-->
+                    <div
+                      class="accordion__header is-activ mx-4  -mb-8"
+                     >
+                     <span
+                     class="accordion__toggle h-[3px] lg:w-[18px] md:w-[22px] sm:w-[14px] w-[27px]"
+                   ></span>
+                      <h2 class="text-sm lg:text-lg font-bold  pt-[1.5rem] ml-[2rem]">
+                        How many people are require to start sole proprietorship?
+                      </h2>
+                    
+                    </div>
+                    <div
+                      class="accordion__body is-activ mx-4 "
+                    >
+                      <p class="px-[3.7rem]">
+                        M quickly assesses your financial information to determine
+                        eligibility and can facilitate a rapid pre-approval process,
+                        guiding you efficiently towards your goal of homeownership.
+                      </p>
+                    </div>
+                    <!--6th end-->
+                    <div
+                      class="accordion__header is-activ mx-4  -mb-8"
+                     >
+                     <span
+                     class="accordion__toggle h-[3px] lg:w-[18px] md:w-[22px] sm:w-[14px] w-[27px]"
+                   ></span>
+                      <h2 class="text-sm lg:text-lg font-bold pt-[1.5rem] ml-[2rem]">
+                        Is Audit require for sole propritorship?                     </h2>
+                    
+                    </div>
+                    <div
+                      class="accordion__body is-activ mx-4 "
+                    >
+                      <p class="px-[3.7rem]">
+                        M quickly assesses your financial information to determine
+                        eligibility and can facilitate a rapid pre-approval process,
+                        guiding you efficiently towards your goal of homeownership.
+                      </p>
+                    </div>
+                    <!--7th end-->
+                    <div
+                      class="accordion__header is-activ mx-4  -mb-8"
+                     >
+                     <span
+                     class="accordion__toggle h-[3px] lg:w-[18px] md:w-[22px] sm:w-[14px] w-[27px]"
+                   ></span>
+                      <h2 class="text-sm lg:text-lg font-bold pt-[1.5rem] ml-[2rem]">
+                        Can I convert sole proprietorship into firm, Pvt Ltd, LLP?
+                       </h2>
+                    
+                    </div>
+                    <div
+                      class="accordion__body is-activ mx-4 "
+                    >
+                      <p class="px-[3.7rem]">
+                        M quickly assesses your financial information to determine
+                        eligibility and can facilitate a rapid pre-approval process,
+                        guiding you efficiently towards your goal of homeownership.
+                      </p>
+                    </div>
+                    <!--8th end-->
+
+                  </div>
+                </div>
+                <!--accodion div close-->
+            </section>
+          </div>
+            <div class="w-[20%]">
+                <img src="/images/exchange_sec10_leftIMG.svg" alt="sec7" class="h-[30rem] float">
+            </div>
+        </div>
+     </section>
+
+
+</body>
+<script>
+    // Accordion
+    $(".accordion__header").click(function (e) {
+      e.preventDefault();
+      var currentIsActive = $(this).hasClass("is-active");
+      $(this).parent(".accordion").find("> *").removeClass("is-active");
+      if (currentIsActive != 1) {
+        $(this).addClass("is-active");
+        $(this).next(".accordion__body").addClass("is-active");
+      }
+    });
+  </script>
+</html>

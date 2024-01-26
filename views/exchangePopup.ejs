@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Land pop up</title>
+     <!-- tailwind CDN -->
+ <script src="https://cdn.tailwindcss.com"></script>
+
+ <link href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300&family=Roboto:wght@700&display=swap" rel="stylesheet">
+   
+</head>
+<style>
+    .hidden {
+        display: none;
+      }
+      .textInter{
+        font-family: 'Inter', sans-serif;
+    }
+  </style>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+   
+  <div class="bg-white h-auto w-[90%] mx-auto mt-12 rounded-xl shadow-2xl pb-12 textInter">
+    <p class="float-right text-xl cursor-pointer px-12 pt-8">X</p>
+    <p class="mx-8 text-3xl pt-6">Exchange Land</p>
+    <p class="mx-8 text-xl pt-4">Land Optimizer offers multiple exchange models that add to your Optimizer convenience. <br> You have to choose the model  that works best for you </p>
+
+    <div class="flex mt-8">
+    <div class="w-[25%] textInter mx-12 ">
+      <a href="#land" class="btn text-2xl hover:text-gray-500" id="button-may">Exchange Land</a> <br> <br>
+      <a href="#plot" class="btn text-2xl" id="button-june">Exchange Plot</a> <br> <br>
+      <a href="#flat" class="btn text-2xl" id="button-june">Exchange Flat</a> <br> <br>
+      <a href="#house" class="btn text-2xl" id="button-june">Exchange House</a> <br> <br>
+      <a href="#shop" class="btn text-2xl" id="button-june">Exchange Shop</a> <br> <br>
+      <a href="#commercial" class="btn text-2xl" id="button-june">Exchange Commercial</a> <br>
+    </div>
+
+    <div class="w-[75%] bg-white float-right">
+    <!-- first div, shows on page load -->
+    <div id="land" class="month ">
+      <div class="flex">
+        <div>
+       <h1 class="text-xl text-[#C89C18]">Simultaneous Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Forward Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Reverse Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Multi - Asset Exchange </h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Partial Asset Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6"></h1>
+    </div>
+    <div>
+        <h1 class="text-xl text-[#C89C18] px-24">Subsidiary of Foreign Company</h1>
+        <h1 class="text-xl text-[#C89C18] px-24 pt-6">Section 8 Company</h1>
+     </div>
+      </div>
+    </div>
+   <!-- second div, hidden originally -->
+    <div class="month hidden" id="plot">
+        <div class="flex">
+            <div>
+           <h1 class="text-xl text-[#C89C18]">Exchange Plot</h1>
+           <h1 class="text-xl text-[#C89C18] pt-6">Forward Exchange Plot</h1>
+           <h1 class="text-xl text-[#C89C18] pt-6">Reverse Exchange</h1>
+           <h1 class="text-xl text-[#C89C18] pt-6">Plot Multi - Asset Exchange </h1>
+           <h1 class="text-xl text-[#C89C18] pt-6">Partial Asset Exchange</h1>
+           <h1 class="text-xl text-[#C89C18] pt-6"></h1>
+        </div>
+        <div>
+            <h1 class="text-xl text-[#C89C18] px-24">Subsidiary of Foreign Plot</h1>
+            <h1 class="text-xl text-[#C89C18] px-24 pt-6">Section 8 Company</h1>
+         </div>
+          </div>
+    </div>
+ 
+ <!-- 3 div, hidden originally -->
+<div class="month hidden" id="flat">
+    <div class="flex">
+        <div>
+       <h1 class="text-xl text-[#C89C18]">FLAT Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Forward Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Reverse Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Multi - Asset Exchange </h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Partial Asset Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6"></h1>
+    </div>
+    <div>
+        <h1 class="text-xl text-[#C89C18] px-24">Subsidiary of Foreign Company</h1>
+        <h1 class="text-xl text-[#C89C18] px-24 pt-6">Section 8 Company</h1>
+     </div>
+      </div>
+  </div>
+
+   <!-- 4 div, hidden originally -->
+   <div class="month hidden" id="house">
+    <div class="flex">
+        <div>
+       <h1 class="text-xl text-[#C89C18]">House Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Forward Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Reverse Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Multi - Asset Exchange </h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Partial Asset Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6"></h1>
+    </div>
+    <div>
+        <h1 class="text-xl text-[#C89C18] px-24">Subsidiary of Foreign Company</h1>
+        <h1 class="text-xl text-[#C89C18] px-24 pt-6">Section 8 Company</h1>
+     </div>
+      </div>
+  </div>
+
+   <!-- 5 div, hidden originally -->
+   <div class="month hidden" id="shop">
+    <div class="flex">
+        <div>
+       <h1 class="text-xl text-[#C89C18]">Shop Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Forward Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Reverse Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Multi - Asset Exchange </h1>
+       <h1 class="text-xl text-[#C89C18] pt-6">Partial Asset Exchange</h1>
+       <h1 class="text-xl text-[#C89C18] pt-6"></h1>
+    </div>
+    <div>
+        <h1 class="text-xl text-[#C89C18] px-24">Subsidiary of Foreign Company</h1>
+        <h1 class="text-xl text-[#C89C18] px-24 pt-6">Section 8 Company</h1>
+     </div>
+      </div>
+  </div>
+
+     <!-- 6 commerrcia div, hidden originally -->
+     <div class="month hidden" id="commercial">
+        <div class="flex">
+            <div>
+           <h1 class="text-xl text-[#C89C18]">Commercial Exchange</h1>
+           <h1 class="text-xl text-[#C89C18] pt-6">Forward Exchange</h1>
+           <h1 class="text-xl text-[#C89C18] pt-6">Reverse Exchange</h1>
+           <h1 class="text-xl text-[#C89C18] pt-6">Multi - Asset Exchange </h1>
+           <h1 class="text-xl text-[#C89C18] pt-6">Partial Asset Exchange</h1>
+           <h1 class="text-xl text-[#C89C18] pt-6"></h1>
+        </div>
+        <div>
+            <h1 class="text-xl text-[#C89C18] px-24">Subsidiary of Foreign Company</h1>
+            <h1 class="text-xl text-[#C89C18] px-24 pt-6">Section 8 Company</h1>
+         </div>
+          </div>
+      </div>   
+
+</div>  <!--content div end-->
+</div><!--flex end-->
+</div> 
+</body>
+  <script>
+    $("a.btn").click(function() {
+        var id = $(this).attr("href");
+        $("div.month:visible").hide();
+        $(id).show();
+      });
+      
+  </script>
+</html>
