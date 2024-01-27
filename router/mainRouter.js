@@ -27,5 +27,30 @@ mainRouter.get('/howtofile',(req,res)=>
     res.render('howtofile')
 }
 )
+mainRouter.get('/howtofile',(req,res)=>
+{
+    res.render('howtofile')
+}
+)
+mainRouter.get('/dashboard',(req,res)=>
+{
+    res.render('dashboard')
+}
+)
 
+mainRouter.get('/dashboard11',(req,res)=>
+{
+    res.render('dashboard11')
+}
+)
+mainRouter.get('/dashboardsubmit',(req,res)=>
+{
+    res.render('dashboardsubmit')
+}
+)
+mainRouter.get('/exchangePopup',(req,res)=>
+{
+    res.render('exchangePopup')
+}
+)
 module.exports = mainRouter
