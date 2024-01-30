@@ -20,14 +20,14 @@
   </head>
   <body class="h-screen bg-[#80DED9]">
     <img src="../public/images/logo.svg" alt="logo" class="mx-auto pt-36 w-96" />
-
+   <form id="myForm" >
     <!-- login section -->
     <div
       class="mx-auto p-10 w-fit flex flex-col items-center gap-5 mt-12"
     >
       <input
-        type="email"
-        name="empEmail"
+        type="text"
+        name="admin_id"
         placeholder="Email ID"
         class="rounded-full w-[35rem] h-[3rem] px-3 focus:outline-none"
       />
@@ -38,7 +38,7 @@
         <input
           type="password"
           id="password"
-          name="empPassword"
+          name="admin_password"
           class="focus:outline-none bg-transparent flex-1 pr-3"
           placeholder="Password"
         />
@@ -61,12 +61,14 @@
       <button
         type="submit"
         class="bg-[#1E1E1E] w-32 h-[3rem] text-white rounded-full mt-5 focus:outline-none"
+        id="myButton"
       >
         Login
       </button>
     </div>
-
+   </form>
     <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
       const passwordInput = document.getElementById("password");
       const showPasswordIcon = document.getElementById("showPassword");
@@ -83,6 +85,34 @@
         showPasswordIcon.style.display = "block";
         hidePasswordIcon.style.display = "none";
       };
+
+      $(document).ready(function()
+    {
+        $('#myForm').submit(function (event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Serialize the form data
+            const formData = $(this).serialize();
+
+            // Send an AJAX request to the server
+            $.ajax({
+                type: 'POST',
+                url: '/admin/adminLogin',
+                data: formData,
+                success: function (response) {
+                    // Display the success message
+                    $('#myForm')[0].reset();
+                    Swal.fire(response)
+                    window.location.href = "/admin/adminDashboard";
+                    // Optionally, reset the form
+                   
+                },
+                error: function (error) {               
+                    Swal.fire(error.responseText)
+                },
+            });
+        });
+    })
+
 
 
     </script>
