@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!---CSS Link-->
+    <link rel="stylesheet" href="/assets/css/home.css">
+    <!--font link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300;600&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    .textInter {
+        font-family: 'Inter', sans-serif;
+
+    }
+
+    .textPoppins {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .sec1 {
+        text-shadow: -1px 1px 0 #000,
+            1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000;
+        color: #80DED9;
+    }
+</style>
+
+<body>
+    <!--section 1-->
+    <section class="flex min-h-screen">
+        <div class="grid grid-cols-2 w-[90%] mx-auto">
+            <div class="flex">
+                <img src="../public/images/profilePage_1_profile.svg" alt="main image" class="object-contains w-[70%]">
+            </div>
+            <div class="flex justify-center items-center mt-10">
+                <form id="myForm" action="/" class="max-w-md w-full bg-white shadow-md rounded px-8 pt-6 pb-8">
+                    <div class="mb-4 relative ">
+                        <label for="name"
+                            class="absolute top-0 -mt-2 left-4 bg-white px-1 text-gray-600 text-xs">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Vishnu S Raj"
+                            class="shadow textInter appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="mb-4 relative">
+                        <label for="mobile"
+                            class="absolute top-0 -mt-3 bg-white px-1 text-gray-600 text-xs">Mobile</label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="9986655516"
+                            class="shadow  textInter appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="mb-4 relative">
+                        <label for="email"
+                            class="absolute top-0 -mt-3 bg-white px-1 text-gray-600 text-xs">Email</label>
+                        <input type="email" id="email" name="email" placeholder="example@gmail.com"
+                            class="shadow  textInter appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="mb-4 relative">
+                        <label for="password"
+                            class="absolute top-0 -mt-3 bg-white px-1 text-gray-600 text-xs">Password</label>
+                        <div class="relative">
+                            <input type="password" id="password" name="password" placeholder="Password"
+                                class="shadow textInter appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <span class="absolute right-0 top-0 mt-3 mr-4" onclick="togglePasswordVisibility(this)">
+                                <i id="eyeIcon" class="far fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="bg-blue-500 textInter hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+                </form>
+            </div>
+
+
+    </section>
+    <script>
+        function togglePasswordVisibility(icon) {
+            var passwordInput = document.getElementById("password");
+            var eyeIcon = document.getElementById("eyeIcon");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            }
+        }
+
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            try {
+                var name = document.getElementById("name").value;
+                var mobile = document.getElementById("mobile").value;
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+
+                // Use the retrieved data here as needed
+                console.log("Name:", name);
+                console.log("Mobile:", mobile);
+                console.log("Email:", email);
+                console.log("Password:", password);
+
+                // Reset the form fields after submission (optional)
+                document.getElementById("myForm").reset();
+            } catch (error) {
+                console.error("Error:", error.message);
+            }
+        });
+    </script>
+</body>
+
+</html>

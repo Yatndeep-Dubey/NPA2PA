@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+       <!---CSS Link-->
+       <link rel="stylesheet" href="/assets/css/home.css">
+           <!--font link-->
+           <link rel="preconnect" href="https://fonts.googleapis.com">
+           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+           <link href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300&family=Roboto:wght@700&display=swap" rel="stylesheet">
+           <link href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300;600&family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+<style>
+    .login-wrapper .left-wrapper {
+        background-color: #80DED9;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 23%;
+    }
+    .right-wrapper {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 170px 0 90px;
+    }
+</style>
+<body>
+    <section class="login-wrapper">
+        <div class="flex">
+            <!--left-->
+          <div class="w-1/2" >  
+            <div class="left-wrapper">
+                <a href="" class="img">
+                    <img src="../public/images/logo.svg" class="h-24">
+                </a>
+            
+                    <span class="textInter text-6xl font-bold">Maximise </span><br>
+                    <span class="text-4xl textPoppins">Your Savings</span> <br> 
+                    <span class="textInter text-6xl font-bold ">We are there</span>    <br>
+                    <span class="text-4xl textPoppins ">For you.</span>
+              </div>
+          </div>
+          <!--right-->
+            <div class="w-1/2" style="padding: 0px;">
+             <div class="right-wrapper textInter ">
+                <h1 class="text-2xl font-semibold">Hello User,</h1>
+               <h3 class="text-xl pt-4 font-semibold">OTP has been sent to   +91-1234567890 🖉      </h3>
+                 <div class="flex mt-8">
+                    <div class="h-12 w-12 border-2 border rounded-xl"></div>
+                    <div class="h-12 w-12 border-2 border rounded-xl mx-2"></div>
+                    <div class="h-12 w-12 border-2 border rounded-xl mx-2"></div>
+                    <div class="h-12 w-12 border-2 border rounded-xl mx-2"></div>
+                    <div class="h-12 w-12 border-2 border rounded-xl mx-2"></div>
+                    <div class="h-12 w-12 border-2 border rounded-xl mx-2"></div>
+                 </div>
+                 <div class="mt-6">
+                    <button
+                      class="bg-[#3C3C3C] text-white hover:bg-black hover:text-white hover:px-8 font-semibold text-lg py-4 px-4 rounded-full flex textInter"
+                      type="submit"
+                    >
+                    VERIFY <img src="../public/images/home_sendArrow.svg" alt="arrow" class="h-6 ml-4 pt-[0.2rem] float-right">
+                    </button>
+                  </div>
+                <div class="flex">
+                  <h3 class="text-xl pt-4">Didn’t recieve OTP yet? &nbsp;</h3>
+                  <p class="pt-4 text-[#C89C18] underline text-xl cursor-pointer">Resend</p>
+                </div>
+             </div>
+                   
+             
+           </div>
+           <!--right end-->
+         
+        </div>
+      </section>
+</body>
+</html>
