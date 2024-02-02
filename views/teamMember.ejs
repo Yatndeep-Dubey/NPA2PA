@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!---CSS Link-->
+    <link rel="stylesheet" href="/assets/css/home.css">
+    <!--font link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300;600&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    .textInter {
+        font-family: 'Inter', sans-serif;
+
+    }
+
+    body {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .textPoppins {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .sec1 {
+        text-shadow: -1px 1px 0 #000,
+            1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000;
+        color: #80DED9;
+    }
+
+    .outline-text {
+        color: transparent;
+        -webkit-text-stroke: 1px black;
+        text-stroke: 1px black;
+
+    }
+
+    .stroke {
+        stroke-width: 2px;
+        stroke: #212121;
+    }
+</style>
+
+<body>
+    <header>
+        <h1 class="text-[#000] text-[4rem] font-[900] textPoppins uppercase text-center my-[3rem] ">
+            Team <span class="textInter font-[700] outline-text ">Member</span></h1>
+        <div class="flex pl-[5rem] justify-around items-center my-[4rem] gap-[1rem] w-[100%] mx-auto">
+            <div class="  w-[40%]">
+                <p class="text-[1.25rem] text-start textInter">Team Member</p>
+                <h2 class="text-[#222327] text-[3.125rem] font-[700] textInter">Our Agency Experts</h2>
+            </div>
+            <div class="bg-[#212121] h-[5.8rem] stroke w-[2px] mt-[20px]"></div>
+            <p class="w-[50%] text-[#414141] text-[.93rem] font-[400] textInter">Mauris imperdiet ex et efficitur
+                convallis.
+                Vestibulum
+                tempus risus a enim
+                rutrum
+                ullamcorper. Donec
+                accumsan imperdiet
+                tincidunt. Cras sapien lectus, molestie a ultricies sed, iaculis at diam. Pellentesq egestas congue
+                ante, eu bibendum
+                metus euismod eu.</p>
+        </div>
+    </header>
+
+
+    <section id="profileContainer"
+        class=" grid grid-cols-3 place-content-center w-[90%] px-7 gap-[3rem] mx-auto my-[8rem]">
+
+    </section>
+
+    <script>
+
+        const imageUrl = "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600";
+
+        const people = [
+            {
+                image: imageUrl,
+                name: "Anya Kapoor",
+                role: "Software Engineer"
+            },
+            {
+                image: imageUrl,
+                name: "Beatrice Garcia",
+                role: "Product Manager"
+            },
+            {
+                image: imageUrl,
+                name: "Charles Lee",
+                role: "Designer"
+            },
+            {
+                image: imageUrl,
+                name: "Diana Martin",
+                role: "Marketing Manager"
+            },
+            {
+                image: imageUrl,
+                name: "Edward Jones",
+                role: "Sales Representative"
+            },
+            {
+                image: imageUrl,
+                name: "Frida Miller",
+                role: "Customer Support Specialist"
+            },
+            {
+                image: imageUrl,
+                name: "George Brown",
+                role: "Data Analyst"
+            },
+            {
+                image: imageUrl,
+                name: "Hanna Williams",
+                role: "Accountant"
+            },
+            {
+                image: imageUrl,
+                name: "Isaac Anderson",
+                role: "System Administrator"
+            },
+            {
+                image: imageUrl,
+                name: "Julia Thomas",
+                role: "Project Manager"
+            },
+            // Add more objects similarly...
+            {
+                image: imageUrl,
+                name: "Karen Rodriguez",
+                role: "UX/UI Designer"
+            },
+            {
+                image: imageUrl,
+                name: "Liam Campbell",
+                role: "Frontend Developer"
+            },
+            {
+                image: imageUrl,
+                name: "Mia Flores",
+                role: "Digital Marketer"
+            },
+            {
+                image: imageUrl,
+                name: "Nathan Wright",
+                role: "Software Architect"
+            },
+            {
+                image: imageUrl,
+                name: "Olivia Parker",
+                role: "Product Owner"
+            },
+            {
+                image: imageUrl,
+                name: "Patrick Martinez",
+                role: "Business Analyst"
+            },
+            {
+                image: imageUrl,
+                name: "Quinn Thompson",
+                role: "Content Writer"
+            },
+            {
+                image: imageUrl,
+                name: "Rachel King",
+                role: "HR Manager"
+            },
+            {
+                image: imageUrl,
+                name: "Samuel Taylor",
+                role: "Quality Assurance Tester"
+            },
+            {
+                image: imageUrl,
+                name: "Victoria Hall",
+                role: "Operations Manager"
+            },
+            {
+                image: imageUrl,
+                name: "William Scott",
+                role: "Network Engineer"
+            }
+        ];
+
+        const profileContainer = document.getElementById("profileContainer");
+
+        const createElement = (person) => {
+            const profileDiv = document.createElement('div');
+            profileDiv.classList.add('flex', 'flex-col', 'gap-[1rem]', 'items-start', 'w-[100%]');
+
+            const imgContainer = document.createElement('div');
+            imgContainer.classList.add('imgcontainer', 'w-full', 'min-h-[24rem]', 'max-h-[24rem]');
+
+            const profileImg = document.createElement('img');
+            profileImg.src = person?.image;
+            profileImg.classList.add('w-full', 'h-full', 'object-cover', 'object-center');
+            profileImg.alt = '';
+
+            imgContainer.appendChild(profileImg);
+
+            const textContainer = document.createElement('div');
+            textContainer.classList.add('flex', 'justify-between', 'items-center', 'w-[100%]');
+
+            const namePara = document.createElement('p');
+            namePara.classList.add('text-[#242A3C]', 'textPoppins', 'text-[1.3rem]', 'font-[500]');
+            namePara.textContent = person?.name;
+
+            const rolePara = document.createElement('p');
+            rolePara.classList.add('text-[#6F6F6F]', 'text-[1rem]', 'font-[500]');
+            rolePara.textContent = person?.role;
+
+            textContainer.appendChild(namePara);
+            textContainer.appendChild(rolePara);
+
+            profileDiv.appendChild(imgContainer);
+            profileDiv.appendChild(textContainer);
+
+            return profileDiv
+        }
+        window.onload = () => {
+            const profileContainer = document.getElementById("profileContainer");
+
+            people?.forEach((person) => {
+                const personData = createElement(person)
+                profileContainer?.appendChild(personData);
+            });
+        };
+
+    </script>
+
+</body>
+
+</html>

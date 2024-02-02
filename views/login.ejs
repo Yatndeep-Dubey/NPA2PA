@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+       <!---CSS Link-->
+       <link rel="stylesheet" href="/assets/css/home.css">
+           <!--font link-->
+           <link rel="preconnect" href="https://fonts.googleapis.com">
+           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+           <link href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300&family=Roboto:wght@700&display=swap" rel="stylesheet">
+           <link href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300;600&family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+<style>
+    .login-wrapper .left-wrapper {
+        background-color: #80DED9;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 23%;
+    }
+    .right-wrapper {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 170px 0 90px;
+    }
+</style>
+<body>
+    <section class="login-wrapper">
+        <div class="flex">
+            <!--left-->
+          <div class="w-1/2" >  
+            <div class="left-wrapper">
+                <a href="" class="img">
+                    <img src="../public/images/logo.svg" class="h-24">
+                </a>
+            
+                    <span class="textInter text-6xl font-bold">Maximise </span><br>
+                    <span class="text-4xl textPoppins">Your Savings</span> <br> 
+                    <span class="textInter text-6xl font-bold ">We are there</span>    <br>
+                    <span class="text-4xl textPoppins ">For you.</span>
+              </div>
+          </div>
+          <!--right-->
+            <div class="w-1/2" style="padding: 0px;">
+             <div class="right-wrapper textInter font-semibold">
+                <h1 class="text-2xl">Create an account to continue</h1>
+               <h3 class="text-xl pt-4">Login by using your name & number</h3>
+               
+               <form class="space-y-6" action="#" method="post">
+                <div>
+               
+              <input
+                type="name"
+                name="fname"
+                placeholder="Name"
+                class="bg-white border-2 text-black text-sm rounded-2xl block w-full p-3.5 -mb-2 mt-12"
+                required
+              />
+            </div>
+           
+          
+
+            <div>
+              <div class="flex gap-3">
+                <div class="col-span-10 w-full">
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Mobile Number"
+                    class="bg-white border-2 text-black text-sm rounded-2xl block w-full -mb-2 p-3.5"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          
+
+            
+            <div>
+              <button
+                class="bg-[#3C3C3C] text-white hover:bg-black hover:text-white hover:px-8 font-semibold text-lg py-4 px-4 rounded-full flex textInter"
+                type="submit"
+              >
+              Request OTP<img src="../public/images/home_sendArrow.svg" alt="arrow" class="h-6 mx-2 pt-[0.2rem]">
+              </button>
+            </div>
+            <br />
+          </form>
+             </div>
+           </div>
+           <!--right end-->
+         
+        </div>
+      </section>
+</body>
+</html>
