@@ -32,7 +32,14 @@ mainRouter.get('/admin/adminDashboard',adminauth.adminisLogin,(req,res)=>
 {
     res.render('adminDashboard')
 })
-
+mainRouter.get('/admin/adminBooking',adminauth.adminisLogin,(req,res)=>
+{
+    res.render('adminBooking')
+})
+mainRouter.get('/admin/adminDownload',adminauth.adminisLogin,(req,res)=>
+{
+    res.render('adminDownload')
+})
 mainRouter.post('/admin/adminLogin',(req,res)=>
 {
     try
