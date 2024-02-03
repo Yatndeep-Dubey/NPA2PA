@@ -56,5 +56,24 @@ mainRouter.post('/admin/adminLogin',(req,res)=>
     
 })
 
-
+mainRouter.get('/exchange',(req,res)=>
+{
+    res.render('exchange')
+}
+)
+mainRouter.get('/NPA2PA',(req,res)=>
+{
+    res.render('NPA2PA')
+}
+)
+mainRouter.get('/trouble',(req,res)=>
+{
+    res.render('trouble')
+}
+)
+mainRouter.get('/property',(req,res)=>
+{
+    res.render('property')
+}
+)
 module.exports = mainRouter
