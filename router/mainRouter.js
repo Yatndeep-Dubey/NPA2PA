@@ -9,8 +9,10 @@ mainRouter.use("/public",express.static('./public'));
 mainRouter.use('/assets',express.static('assets'));
 const userModel = require('../models/userModel')
 const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
 mainRouter.use(bodyParser.urlencoded({extended:true}))
 const session = require('express-session');
+mainRouter.use(cookieParser())
 mainRouter.use(session(
     {
         secret:"Mysecret",
@@ -119,6 +121,8 @@ mainRouter.post('/verify-otp',async (req,res)=>{
          const user = await userModel.findOne({mobile:req.body.mobile})
             if(user.otp == req.body.otp)
             {
+                res.cookie('user_name',user.name)
+                res.cookie('user_mobile',user.mobile)
                 return res.status(200).json("Login Successful")
             }
             else
@@ -130,6 +134,12 @@ mainRouter.post('/verify-otp',async (req,res)=>{
    {
        console.log(error.message)
    }
+})
+mainRouter.get('/logout',(req,res)=>
+{
+    res.clearCookie('user_mobile');
+    res.clearCookie('user_name')
+	res.redirect('/');
 })
 module.exports = mainRouter
 

@@ -103,12 +103,31 @@
      <div class="mt-4 mx-2">
       <button class="px-4 py-2 text-md font-semibold bg-[#3C3C3C] text-white rounded-full">Join Us</button>
      </div> 
-     <div class="mt-4 mx-2">
-      <button class="px-4 py-2 text-md font-semibold bg-white text-black rounded-full flex">Signup/Login &nbsp;<h2>→</h2> 
-        
-      </button>
-     </div> 
-   
+     <div class="mt-4 mx-2" id="login_section">
+      
+     </div>    
     </div>
  
   </nav>
+  <script>
+    const user_email = decodeURIComponent(document.cookie.split('; ').find(row => row.startsWith('user_mobile=')))
+    const user_name =  decodeURIComponent(document.cookie.split('; ').find(row => row.startsWith('user_name=')))
+    const new_user_mobile = decodeURIComponent(user_email.split('=')[1]);
+    const new_user_name = decodeURIComponent(user_name.split('=')[1]);
+   if(new_user_mobile && new_user_name == 'undefined')
+   {
+       document.getElementById('login_section').innerHTML = `
+       <a href="/login">
+      <button class="px-4 py-2 text-md font-semibold bg-white text-black rounded-full flex">Signup/Login &nbsp;<h2>→</h2>       
+      </button>
+      </a>
+       `
+   }
+   else
+   {
+       document.getElementById('login_section').innerHTML = 
+       `<button class="px-4 py-2 text-md font-semibold bg-[#3C3C3C] text-white rounded-full">${new_user_name}</button>
+      `
+   }
+    
+  </script>
