@@ -7,6 +7,7 @@ mainRouter.set('view engine','ejs')
 mainRouter.set('views','views')
 mainRouter.use("/public",express.static('./public'));
 mainRouter.use('/assets',express.static('assets'));
+const userModel = require('../models/userModel')
 const bodyParser = require('body-parser')
 mainRouter.use(bodyParser.urlencoded({extended:true}))
 const session = require('express-session');
@@ -56,5 +57,79 @@ mainRouter.post('/admin/adminLogin',(req,res)=>
     
 })
 
+mainRouter.get('/admin/booking',(req,res)=>
+{
+    res.render('booking')
+})
+mainRouter.get('/exchange',(req,res)=>
+{
+    res.render('exchange')
+})
 
+mainRouter.get('/login',(req,res)=>
+{
+    res.render('login')
+})
+
+
+const generateOtp = ()=>
+{
+    return Math.floor(1000 + Math.random() * 9000)
+}
+
+mainRouter.post('/login',async (req,res)=>
+{
+    if(req.body.mobile.length != 10 )
+    {
+        return res.status(400).json("Invalid Mobile Number")
+    }
+    try
+    {
+        const user = await userModel.findOne({mobile:req.body.mobile})
+        if(user)
+        {
+            const otp = generateOtp()
+            await userModel.findOneAndUpdate({mobile:req.body.mobile},{otp:otp})
+            return res.status(200).json({otp:otp.toString(),mobile:req.body.mobile,name:req.body.name})
+            
+        }
+        else
+        {
+            await userModel.create(req.body)
+            const otp = generateOtp()
+            await userModel.findOneAndUpdate({mobile:req.body.mobile},{otp:otp})
+            return res.status(200).json({otp:otp.toString(),mobile:req.body.mobile,name:req.body.name})
+        }
+    }
+    catch(error)
+    {
+        console.log(error.message)
+    }
+    
+})
+
+mainRouter.get('/verify-otp',(req,res)=>
+{
+
+    res.render('loginOTP',{mobile:req.query.mobile,name:req.query.name})
+})
+mainRouter.post('/verify-otp',async (req,res)=>{
+   try
+   {
+         const user = await userModel.findOne({mobile:req.body.mobile})
+            if(user.otp == req.body.otp)
+            {
+                return res.status(200).json("Login Successful")
+            }
+            else
+            {
+                return res.status(400).json("Invalid Otp")
+            }
+   }
+   catch(error)
+   {
+       console.log(error.message)
+   }
+})
 module.exports = mainRouter
+

@@ -8,6 +8,7 @@
        <!---CSS Link-->
        <link rel="stylesheet" href="/assets/css/home.css">
            <!--font link-->
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
            <link rel="preconnect" href="https://fonts.googleapis.com">
            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
            <link href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300&family=Roboto:wght@700&display=swap" rel="stylesheet">
@@ -47,18 +48,22 @@
               </div>
           </div>
           <!--right-->
+         
             <div class="w-1/2" style="padding: 0px;">
+              <form id="myForm">
              <div class="right-wrapper textInter ">
-                <h1 class="text-2xl font-semibold">Hello User,</h1>
-               <h3 class="text-xl pt-4 font-semibold">OTP has been sent to   +91-1234567890 🖉      </h3>
-                 <div class="flex mt-8">
+                <h1 class="text-2xl font-semibold">Hello <%=name%>,</h1>
+               <h3 class="text-xl pt-4 font-semibold">OTP has been sent to   <%=mobile%>🖉      </h3>
+                 <!-- <div class="flex mt-8">
                     <div class="h-12 w-12 border-2 border rounded-xl"></div>
                     <div class="h-12 w-12 border-2 border rounded-xl mx-2"></div>
                     <div class="h-12 w-12 border-2 border rounded-xl mx-2"></div>
                     <div class="h-12 w-12 border-2 border rounded-xl mx-2"></div>
                     <div class="h-12 w-12 border-2 border rounded-xl mx-2"></div>
                     <div class="h-12 w-12 border-2 border rounded-xl mx-2"></div>
-                 </div>
+                 </div> -->
+                 <input type="text" name="otp" class="p-1 my-2 border-2 border-gray-800">
+                 <input type="hidden" name="mobile" value="<%=mobile%>">
                  <div class="mt-6">
                     <button
                       class="bg-[#3C3C3C] text-white hover:bg-black hover:text-white hover:px-8 font-semibold text-lg py-4 px-4 rounded-full flex textInter"
@@ -67,6 +72,7 @@
                     VERIFY <img src="../public/images/home_sendArrow.svg" alt="arrow" class="h-6 ml-4 pt-[0.2rem] float-right">
                     </button>
                   </div>
+                </form>
                 <div class="flex">
                   <h3 class="text-xl pt-4">Didn’t recieve OTP yet? &nbsp;</h3>
                   <p class="pt-4 text-[#C89C18] underline text-xl cursor-pointer">Resend</p>
@@ -75,9 +81,41 @@
                    
              
            </div>
+         
            <!--right end-->
          
         </div>
       </section>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+<script>
+   $(document).ready(function()
+    {
+        $('#myForm').submit(function (event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Serialize the form data
+            const formData = $(this).serialize();
+
+            // Send an AJAX request to the server
+            $.ajax({
+                type: 'POST',
+                url: '/verify-otp',
+                data: formData,
+                success: function (response) {
+                    // Display the success message
+                    $('#myForm')[0].reset();
+                    Swal.fire(response);
+                   
+
+                    // Optionally, reset the form
+                   
+                },
+                error: function (error) {               
+                    Swal.fire(error.responseText)
+                },
+            });
+        });
+    })
+</script>
 </html>

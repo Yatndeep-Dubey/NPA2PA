@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
        <!---CSS Link-->
        <link rel="stylesheet" href="/assets/css/home.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
            <!--font link-->
            <link rel="preconnect" href="https://fonts.googleapis.com">
            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,17 +48,18 @@
               </div>
           </div>
           <!--right-->
+          
             <div class="w-1/2" style="padding: 0px;">
              <div class="right-wrapper textInter font-semibold">
                 <h1 class="text-2xl">Create an account to continue</h1>
                <h3 class="text-xl pt-4">Login by using your name & number</h3>
                
-               <form class="space-y-6" action="#" method="post">
+               <form class="space-y-6" id="myForm">
                 <div>
                
               <input
                 type="name"
-                name="fname"
+                name="name"
                 placeholder="Name"
                 class="bg-white border-2 text-black text-sm rounded-2xl block w-full p-3.5 -mb-2 mt-12"
                 required
@@ -71,7 +73,7 @@
                 <div class="col-span-10 w-full">
                   <input
                     type="tel"
-                    name="phone"
+                    name="mobile"
                     placeholder="Mobile Number"
                     class="bg-white border-2 text-black text-sm rounded-2xl block w-full -mb-2 p-3.5"
                     required
@@ -86,6 +88,7 @@
               <button
                 class="bg-[#3C3C3C] text-white hover:bg-black hover:text-white hover:px-8 font-semibold text-lg py-4 px-4 rounded-full flex textInter"
                 type="submit"
+                id="myButton"
               >
               Request OTP<img src="../public/images/home_sendArrow.svg" alt="arrow" class="h-6 mx-2 pt-[0.2rem]">
               </button>
@@ -99,4 +102,38 @@
         </div>
       </section>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+<script>
+   $(document).ready(function()
+    {
+        $('#myForm').submit(function (event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Serialize the form data
+            const formData = $(this).serialize();
+
+            // Send an AJAX request to the server
+            $.ajax({
+                type: 'POST',
+                url: '/login',
+                data: formData,
+                success: function (response) {
+                    // Display the success message
+                    $('#myForm')[0].reset();
+                    alert(response.otp);
+                    window.location.href = `/verify-otp?mobile=${response.mobile}&name=${response.name}`;
+
+                    // Optionally, reset the form
+                   
+                },
+                error: function (error) {               
+                    Swal.fire(error.responseText)
+                },
+            });
+        });
+    })
+
+
+</script>
 </html>
