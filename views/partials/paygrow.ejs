@@ -16,7 +16,8 @@
               <span class="flex text-xl textInter mt-4"><img src="../public/images/home_sec1_arrow.svg" alt="arrow" class="mx-4">Lorem Ipsum </span>
             </div>
             <div class="bg-[#F6F6F6] h-16 text-center py-4 text-2xl font-semibold textInter mt-56">2499.00/-</div>
-            <div class="h-16 w-full py-4 bg-[#3C3C3C] text-[#80DED9] text-2xl text-center font-bold textInter sec7_buynow">Buy Now</div>
+            <div id="basic_product">
+            </div>
         </div>
         <div class="w-1/3 h-[35rem] bg-white shadow-2xl rounded-2xl mx-4 ">
             <div class="h-16 w-full py-4 bg-[#80DED9] text-black text-2xl text-center font-bold textInter sec7">Standard
@@ -30,7 +31,10 @@
                <span class="flex text-xl textInter mt-4"><img src="../public/images/home_sec1_arrow.svg" alt="arrow" class="mx-4">Lorem Ipsum </span>
              </div>
              <div class="bg-[#F6F6F6] h-16 text-center py-4 text-2xl font-semibold textInter mt-24">5899.00/-</div>
-             <div class="h-16 w-full py-4 bg-[#3C3C3C] text-[#80DED9] text-2xl text-center font-bold textInter sec7_buynow">Buy Now</div>
+             <div id="standard_product">
+
+             </div>
+             
          </div>
          <div class="w-1/3 h-[35rem] bg-white shadow-2xl rounded-2xl mx-4 ">
             <div class="h-16 w-full py-4 bg-[#80DED9] text-black text-2xl text-center font-bold textInter sec7">Premium
@@ -44,8 +48,78 @@
                <span class="flex text-xl textInter mt-4"><img src="../public/images/home_sec1_arrow.svg" alt="arrow" class="mx-4">Lorem Ipsum </span>
              </div>
              <div class="bg-[#F6F6F6] h-16 text-center py-4 text-2xl font-semibold textInter mt-24">9899.00/-</div>
-             <div class="h-16 w-full py-4 bg-[#3C3C3C] text-[#80DED9] text-2xl text-center font-bold textInter sec7_buynow">Buy Now</div>
+             <div id="premium_product">
+
+             </div>
+             
          </div>
     </div>
 
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  
+     if(new_user_mobile && new_user_name == 'undefined')
+     {
+
+      const basic_product = document.getElementById('basic_product');
+      const standard_product = document.getElementById('standard_product');
+      const premium_product = document.getElementById('premium_product');
+      basic_product.innerHTML = `
+          
+          <div class="h-16 w-full py-4 bg-[#3C3C3C] text-[#80DED9] text-2xl text-center font-bold textInter sec7_buynow cursor-pointer">Buy Now</div>
+          `
+      standard_product.innerHTML = `
+       
+        <div class="h-16 w-full py-4 bg-[#3C3C3C] text-[#80DED9] text-2xl text-center font-bold textInter sec7_buynow cursor-pointer">Buy Now</div>
+        `
+       premium_product.innerHTML = `
+       
+        <div class="h-16 w-full py-4 bg-[#3C3C3C] text-[#80DED9] text-2xl text-center font-bold textInter sec7_buynow cursor-pointer">Buy Now</div>
+        `
+       basic_product.addEventListener('click',()=>{
+           Swal.fire( 
+            {
+              title: "Oops...",
+              text: "Please login to buy the product",
+              footer: '<a href="/login">Login</a>'
+            })
+        })
+        standard_product.addEventListener('click',()=>{
+          Swal.fire( 
+            {
+              title: "Oops...",
+              text: "Please login to buy the product",
+              footer: '<a href="/login">Login</a>'
+            })
+        })
+        premium_product.addEventListener('click',()=>{
+          Swal.fire( 
+            {
+              title: "Oops...",
+              text: "Please login to buy the product",
+              footer: '<a href="/login">Login</a>'
+            })
+        })
+     }
+     else
+     {
+        document.getElementById('basic_product').innerHTML = `
+          <a href="/add_product_to_cart/?mobile=${new_user_mobile}&product_id=1">
+          <div class="h-16 w-full py-4 bg-[#3C3C3C] text-[#80DED9] text-2xl text-center font-bold textInter sec7_buynow">Buy Now</div>
+          </a>
+          `
+        document.getElementById('standard_product').innerHTML = `
+        <a href="/add_product_to_cart/?mobile=${new_user_mobile}&product_id=2">
+        <div class="h-16 w-full py-4 bg-[#3C3C3C] text-[#80DED9] text-2xl text-center font-bold textInter sec7_buynow">Buy Now</div>
+        </a>
+        `
+        document.getElementById('premium_product').innerHTML = `
+        <a href="/add_product_to_cart/?mobile=${new_user_mobile}&product_id=3">
+        <div class="h-16 w-full py-4 bg-[#3C3C3C] text-[#80DED9] text-2xl text-center font-bold textInter sec7_buynow">Buy Now</div>
+        </a>
+        `
+     } 
+   
+</script>

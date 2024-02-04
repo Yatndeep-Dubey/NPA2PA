@@ -8,6 +8,7 @@ mainRouter.set('views','views')
 mainRouter.use("/public",express.static('./public'));
 mainRouter.use('/assets',express.static('assets'));
 const userModel = require('../models/userModel')
+const products = require('../constants/products')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 mainRouter.use(bodyParser.urlencoded({extended:true}))
@@ -35,7 +36,15 @@ mainRouter.get('/admin/adminDashboard',adminauth.adminisLogin,(req,res)=>
 {
     res.render('adminDashboard')
 })
+mainRouter.get('/adminBooking',adminauth.adminisLogin,(req,res)=>
+{
 
+    res.render('adminBooking')
+})
+mainRouter.get('/admin/adminDownload',adminauth.adminisLogin,(req,res)=>
+{
+    res.render('adminDownload')
+})
 mainRouter.post('/admin/adminLogin',(req,res)=>
 {
     try
@@ -135,11 +144,55 @@ mainRouter.post('/verify-otp',async (req,res)=>{
        console.log(error.message)
    }
 })
+mainRouter.get('/userDashboard',async  (req,res)=>
+{
+    try
+    {
+         const product = await userModel.findOne({mobile:req.cookies.user_mobile})
+         res.render('userDashboard',{products:product.products})
+    }
+
+    catch(error)
+    {
+        console.log(error.message)
+    }
+    
+})
+
+mainRouter.get('/add_product_to_cart', async (req,res)=>
+{
+    try
+    {
+        const user = await userModel.findOne({mobile:req.query.mobile})
+        const product = products.find((product)=>product.product_id == req.query.product_id)
+        user.products.push(product)
+        await user.save()
+        res.redirect('/userDashboard')
+        
+    }
+    catch(error)
+    {
+        console.log(error.message)
+    }
+})
+mainRouter.get('/user_details', async  (req,res)=>
+{
+    try
+    {
+       const user = await userModel.findOne({mobile:req.query.mobile})
+       res.status(200).json(user)
+    }
+    catch(error)
+    {
+        console.log(error.message)
+    }
+})
 mainRouter.get('/logout',(req,res)=>
 {
     res.clearCookie('user_mobile');
     res.clearCookie('user_name')
 	res.redirect('/');
 })
+
 module.exports = mainRouter
 
