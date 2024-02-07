@@ -196,3 +196,15 @@ mainRouter.get('/logout',(req,res)=>
 
 module.exports = mainRouter
 
+mainRouter.get('/userDashboardsubmit',(req,res)=>
+{
+    res.render('userDashboardsubmit')
+})
+mainRouter.get('/cancel',(req,res)=>
+{
+    res.render('cancel')
+})
+mainRouter.get('/table',(req,res)=>
+{
+    res.render('table')
+})
