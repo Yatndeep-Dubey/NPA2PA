@@ -204,7 +204,20 @@ mainRouter.get('/cancel',(req,res)=>
 {
     res.render('cancel')
 })
+mainRouter.get('/contact',(req,res)=>
+{
+    res.render('contact')
+})
+
 mainRouter.get('/table',(req,res)=>
 {
     res.render('table')
+})
+mainRouter.get('/blogdetails',(req,res)=>
+{
+    res.render('blogdetails')
+})
+mainRouter.get('/loginemail',(req,res)=>
+{
+    res.render('loginemail')
 })
