@@ -221,3 +221,11 @@ mainRouter.get('/loginemail',(req,res)=>
 {
     res.render('loginemail')
 })
+mainRouter.get('/tools',(req,res)=>
+{
+    res.render('tools')
+})
+mainRouter.get('/faq',(req,res)=>
+{
+    res.render('faq')
+})

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!---CSS Link-->
+    <link rel="stylesheet" href="/assets/css/home.css">
+    <!--font link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300;600&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <style>
+        .textInter {
+            font-family: 'Inter', sans-serif;
+        }
+
+
+
+        .textPoppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .sec1 {
+            text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+            color: #80DED9;
+        }
+
+        .outline-text {
+            color: transparent;
+            -webkit-text-stroke: 1px black;
+            text-stroke: 1px black;
+        }
+
+        .stroke {
+            stroke-width: 2px;
+            stroke: #212121;
+        }
+
+
+
+
+        .rating {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            margin: 20px 0px;
+        }
+
+
+
+        .faq-question {
+            font-size: 1rem;
+            font-weight: bold;
+            border-bottom: 2px solid #000;
+            padding-bottom: 0.5rem;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            font-size: 0.825rem;
+            display: none;
+        }
+
+        .faq-container {
+            border: 2px solid #000;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .testimonial-item {
+            min-width: 450px;
+            min-height: 300px;
+            padding: 50px 0px;
+            justify-content: center;
+            border-radius: 30px !important;
+            margin: 0 40px;
+            border: 4px solid black;
+        }
+
+
+
+        .testimonial-image {
+            position: absolute;
+            bottom: -20%;
+            left: 50%;
+            /* Set left to 50% */
+            transform: translateX(-50%);
+            /* Use translateX to move the element back by half of its width */
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-[#000] text-[4rem] font-[900] textPoppins uppercase text-center my-[3rem] ">
+        FA<span class="textInter font-[700] outline-text ">Q</span></h1>
+    <div class="flex  flex-col items-center my-[3rem] gap-[1rem] w-[100%] mx-auto">
+        <h2 class="text-[#1D1D1D] textInter text-[3.125rem] font-[700] capitalize">Some Of Our Frequently Asked
+            Questions</h2>
+        <p class="text-[#2A9BED] border-b-[2px] border-solid border-[#2A9BED] text-[.825rem] font-[400] uppercase">
+            Unleash
+            the full potential of your business with
+            our software.</p>
+    </div>
+
+    <section id="faqContainer" class="flex flex-col w-[90%] mx-auto gap-[1rem] my-[3rem]"></section>
+
+    <section class="flex flex-col overflow-hidden w-[100%] ">
+        <h2 class="text-[#1D1D1D] textInter text-center my-[1rem] text-[3.125rem] font-[700] capitalize">
+            Testimonials from our Customers </h2>
+        <p class="text-[#575757] w-[60%] mx-auto text-[500]  textInter text-center text-[.925rem]  capitalize">
+            Donec
+            tempor
+            tempus
+            tortor, id
+            molestie felis.
+            Aliquam et elementum est. Suspendisse accumsan metus nec quam porta
+            pharetra. Maecenas at mollis neque.</p>
+        <section class="testimonial-carousel mt-[4rem]" style="height: 400px !important;"></section>
+        <div class="review-dots m-0 p-0 top-0" style="height:50px;">
+        </div>
+    </section>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        const faqData = [
+            {
+                question: "What is Lorem Ipsum?",
+                answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            },
+            {
+                question: "Why do we use it?",
+                answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+            },
+            {
+                question: "Where does it come from?",
+                answer: "Contrary to popular belief, Lorem Ipsum is not simply random text."
+            },
+            {
+                question: "Where can I get some?",
+                answer: "There are many variations of passages of Lorem Ipsum available."
+            },
+            {
+                question: "What is the main use of Lorem Ipsum?",
+                answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+            },
+            {
+                question: "Is Lorem Ipsum readable English?",
+                answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+            },
+            {
+                question: "What is the origin of Lorem Ipsum?",
+                answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+            },
+            {
+                question: "What are the benefits of using Lorem Ipsum?",
+                answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+            },
+            {
+                question: "Are there any references in literature?",
+                answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+            },
+            {
+                question: "What is the meaning behind Lorem Ipsum?",
+                answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+            },
+            // Add 10 more FAQs with similar structure
+            // ...
+        ];
+
+        // Function to toggle the visibility of FAQ details
+        const toggleReview = (index) => {
+            console.log("toggleReview");
+            const reviewContainer = document.querySelector("#review_" + index);
+
+            const faq = faqData[index];
+
+            // Ternary operator to switch between open and closed states
+            const faqContent = reviewContainer?.classList?.contains("open") ?
+                `<div class="flex justify-between items-center cursor-pointer accordin">
+                    <h2 class="font-[600] capitalize">${faq.question}</h2>
+                    <span class="toggle-icon text-gray-900" onClick=toggleReview(${index})><i class="fa-solid fa-plus"></i></span>             
+                </div>
+                <div class="hidden">
+                    <p class="text-[.825rem] mt-[1rem]">${faq.answer}</p>
+                </div>` :
+                `<div class="flex justify-between mx-3 items-center cursor-pointer accordin border-b-[3px] pb-3 border-solid border-black">
+                    <h2 class="font-[700] textInter capitalize">${faq.question}</h2>
+                    <span class="toggle-icon text-gray-900" onClick=toggleReview(${index})><i class="fa-solid fa-minus"></i></span>             
+                </div>
+                <div>
+                    <p class="text-[.825rem] textInter py-2 px-3 text-black mt-[1rem]">${faq.answer}</p>
+                </div>`;
+
+            // Toggle the "open" class for styling
+            reviewContainer.classList.toggle("open");
+
+            // Update the content of the FAQ container
+            reviewContainer.innerHTML = faqContent;
+        };
+
+        // Function to add FAQs to the container
+        function addFAQs() {
+            const faqContainer = document.querySelector("#faqContainer");
+
+            faqData.forEach((faq, index) => {
+                // Creating HTML content for each FAQ
+                const faqContent = `
+                    <div id="review_${index}" class="faqItem textInter text-[#000] text-[1.2rem] flex flex-col p-4 py-[1rem]" >
+                        <div class="flex justify-between items-center cursor-pointer accordin">
+                            <h2 class="font-[600] capitalize">${faq.question}</h2>
+                            <span class="toggle-icon text-gray-900" onClick=toggleReview(${index})><i class="fa-solid fa-plus"></i></span>             
+                        </div>
+                        <div class="hidden">
+                            <p class="text-[.825rem] mt-[1rem]">${faq.answer}</p>
+                        </div>
+                    </div>`;
+
+                // Creating a new div element and setting its attributes
+                const faqElement = document.createElement('div');
+                faqElement.className = "faqContainerItem bg-[#80DED9] shadow-sm rounded-[.93rem] p-1";
+                faqElement.innerHTML = faqContent.trim();
+
+                // Appending the newly created FAQ element to the faqContainer
+                faqContainer.appendChild(faqElement);
+            });
+        }
+
+        $(document).ready(function () {     // Function to generate star icons based on rating value
+            function getStarsHTML(rating) {
+                const maxRating = 5; // Maximum rating value
+                let starsHTML = '';
+                const filledStars = Math.floor(rating);
+                const remainder = rating - filledStars;
+
+                for (let i = 0; i < filledStars; i++) {
+                    starsHTML += '&#9733;'; // Unicode for a filled star
+                }
+
+                if (remainder > 0) {
+                    starsHTML += '&#9734;'; // Unicode for a half-filled star
+                }
+
+                const emptyStars = maxRating - Math.ceil(rating);
+                for (let i = 0; i < emptyStars; i++) {
+                    starsHTML += '&#9734;'; // Unicode for an empty star
+                }
+
+                return starsHTML;
+            }
+
+
+
+            const addTestimonials = () => {
+                const testimonials = [
+                    {
+                        name: "John Doe",
+                        designation: "CEO, Company X",
+                        comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam ex ac gravida malesuada.",
+                        image: "https://randomuser.me/api/portraits/men/1.jpg",
+                        rating: 4.5,
+                    },
+                    {
+                        name: "Jane Smith",
+                        designation: "Marketing Manager, Company Y",
+                        comment: "Vestibulum id sodales enim. Nunc nec arcu eget justo feugiat dignissim.",
+                        image: "https://randomuser.me/api/portraits/women/2.jpg",
+                        rating: 5.0,
+                    },
+                    {
+                        name: "Michael Johnson",
+                        designation: "CTO, Tech Solutions",
+                        comment: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+                        image: "https://randomuser.me/api/portraits/men/3.jpg",
+                        rating: 4.0,
+                    },
+                    {
+                        name: "Emily Davis",
+                        designation: "Creative Director, Design Co.",
+                        comment: "Fusce luctus odio ac nibh maximus, ac fermentum ligula cursus. Suspendisse potenti.",
+                        image: "https://randomuser.me/api/portraits/women/4.jpg",
+                        rating: 4.8,
+                    },
+                    {
+                        name: "Daniel White",
+                        designation: "Product Manager, Innovate Corp",
+                        comment: "Aenean auctor elit nec orci euismod, ut ultrices lectus bibendum. Duis vehicula, neque vitae feugiat dapibus.",
+                        image: "https://randomuser.me/api/portraits/men/5.jpg",
+                        rating: 3.5,
+                    },
+                    // Add 15 more testimonials with similar structure
+                    // ...
+                ];
+
+                const testimonialCarousel = $(".testimonial-carousel");
+                const reviewDotsContainer = $(".review-dots");
+
+
+                testimonials.forEach((testimonial, index) => {
+                    const testimonialItem = `
+                        <div class="testimonial-item bg-[#E7F8FF] px-4 flex flex-col relative items-center gap-[1rem ] border-solid border-2 rounded-md mx-7 w-[450px]">
+                            <div class="testimonial-content flex textInter flex-col gap-[.8rem] items-center">
+                                <h3 class="text-[#000000] text-[1.2rem] capitalize font-semibold">${testimonial.name}</h3>
+                                <p class="text-center text-[.825rem] text-[#43434]">${testimonial.comment}</p>
+                                <span>${testimonial.designation}</span>
+                            </div>
+                              <div class="rating">${getStarsHTML(testimonial.rating)}</div>
+                            <img src="${testimonial.image}" class="testimonial-image rounded-full " alt="${testimonial.name}">
+                          
+                        </div>`;
+                    testimonialCarousel.append(testimonialItem);
+
+
+
+                });
+
+
+            };
+
+            const slider = () => {
+                $('.review-dots').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    fade: true,
+                    asNavFor: '.testimonial-carousel',
+                    autoplay: true,        // Enable autoplay
+                    autoplaySpeed: 3000
+                });
+                $('.testimonial-carousel').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    asNavFor: '.review-dots',
+                    dots: true,
+                    centerMode: true,
+                    focusOnSelect: true,
+                    autoplay: true,        // Enable autoplay
+                    autoplaySpeed: 3000
+                });
+
+            }
+
+            // Run the functions when the window loads
+            window.onload = () => {
+                addFAQs();
+                addTestimonials();
+                slider()
+            };
+        });
+    </script>
+</body>
+
+</html>
