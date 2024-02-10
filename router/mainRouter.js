@@ -326,3 +326,36 @@ mainRouter.get('/logout',(req,res)=>
 
 module.exports = mainRouter
 
+mainRouter.get('/userDashboardsubmit',(req,res)=>
+{
+    res.render('userDashboardsubmit')
+})
+mainRouter.get('/cancel',(req,res)=>
+{
+    res.render('cancel')
+})
+mainRouter.get('/contact',(req,res)=>
+{
+    res.render('contact')
+})
+
+mainRouter.get('/table',(req,res)=>
+{
+    res.render('table')
+})
+mainRouter.get('/blogdetails',(req,res)=>
+{
+    res.render('blogdetails')
+})
+mainRouter.get('/loginemail',(req,res)=>
+{
+    res.render('loginemail')
+})
+mainRouter.get('/tools',(req,res)=>
+{
+    res.render('tools')
+})
+mainRouter.get('/faq',(req,res)=>
+{
+    res.render('faq')
+})

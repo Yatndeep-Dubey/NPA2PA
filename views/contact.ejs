@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!---CSS Link-->
+    <link rel="stylesheet" href="/assets/css/home.css">
+    <!--font link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300;600&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    .textPoppins {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
+<body>
+    <h1 class="textPoppins text-[4rem] font-bold text-center my-[3rem]">Contact</h1>
+
+    <main class="flex w-[80%] my-[3rem] items-start justify-start mx-auto  ">
+        <form id="myForm" action="#" class="w-[50%] flex flex-col gap-[1rem] items-start">
+            <input type="text" id="name" name="name" placeholder="Name"
+                class="textInter py-5 px-3 border1 rounded-full w-[30rem] h-[2rem] text-[1.2rem]">
+
+            <input type="tel" id="mobile" name="mobile" placeholder="Mobile"
+                class="textInter py-5 px-3 border1 rounded-full w-[30rem] h-[2rem] text-[1.2rem]">
+
+            <input type="email" id="email" name="email" placeholder="Email"
+                class="textInter py-5 px-3 border1 rounded-full w-[30rem] h-[2rem] text-[1.2rem]">
+
+
+            <input type="password" id="password" name="password" placeholder="Password"
+                class="textInter py-5 px-3 border1 rounded-full w-[30rem] h-[2rem] text-[1.2rem]">
+
+            <textarea id="textareaExample" name="textareaExample" placeholder="Your Text Here"
+                class="textInter py-5 px-3 border1 rounded-[1.5rem] w-[30rem] h-[7rem] text-[1.2rem]"></textarea>
+
+
+            <button type="submit"
+                class="flex textInter gap-[.9rem] mt-[1rem] items-center bg-[#3C3C3C] text-white px-[2rem] py-[.7rem] rounded-full uppercase"><span>Submit</span>
+                <img src="./images//icon/contact_right_icon.svg" class="w-[1.2rem]" alt=""></button>
+        </form>
+
+        <div class="flex h-[100%] textInter  my-[3rem] flex-col justify-center items-start gap-[1rem] ">
+            <div class="flex justify-start items-start">
+                <img src="./images/icon/contact_location_1.svg" class="w-[2.8rem] h-[2.8rem]" alt="">
+                <div class="flex mt-2 flex-col items-start textInter text-black text-[1.3rem] font-[400]">
+                    <p>#123,</p>
+                    <p>Street Name,</p>
+                    <p>City, Country</p>
+                    <p>
+                        Zip: 000 000
+                    </p>
+                </div>
+            </div>
+            <div class="flex  justify-center pl-3  items-start gap-[1rem]">
+                <img src="./images/icon/contact_call_1.svg" class="w-[1.5rem] " alt="">
+
+                <p class=" textInter text-black text-[1.3rem] font-[400]">9986655516</p>
+
+
+            </div>
+            <div class="flex  justify-start gap-1rem  items-start gap-[1rem] pl-2">
+                <img src="./images/icon/contact_mail_email_icon 1.svg" class="w-[1.5rem]" alt="">
+
+                <p class=" textInter text-black text-[1.3rem] font-[400]">
+                    Sanjeev@scloudin.in
+                </p>
+
+
+            </div>
+        </div>
+    </main>
+
+    <section>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14415.241239253188!2d86.14464829999999!3d25.41115945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1706207598756!5m2!1sen!2sin"
+            width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+</body>
+
+</html>
