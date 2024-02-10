@@ -11,9 +11,32 @@ const userModel = require('../models/userModel')
 const products = require('../constants/products')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
+const multer = require('multer')
 mainRouter.use(bodyParser.urlencoded({extended:true}))
 const session = require('express-session');
+mainRouter.use(bodyParser.json())
+const path = require('path')
+const fs = require('fs')
 mainRouter.use(cookieParser())
+
+const storage = multer.diskStorage({
+    destination:function(req,file,cb){
+        cb(null,path.join(__dirname,'../public/user_documents'),function(error,success){
+            if(error) throw error
+        })
+    },
+    filename:function(req,file,cb){
+        const name = Date.now()+'-'+file.originalname
+        cb(null,name),function(error,success){
+            if(error) throw error
+        }
+    }
+
+})
+
+const upload = multer({storage:storage})
+
+
 mainRouter.use(session(
     {
         secret:"Mysecret",
@@ -90,6 +113,7 @@ const generateOtp = ()=>
 
 mainRouter.post('/login',async (req,res)=>
 {
+    console.log(req.body)
     if(req.body.mobile.length != 10 )
     {
         return res.status(400).json("Invalid Mobile Number")
@@ -128,10 +152,12 @@ mainRouter.post('/verify-otp',async (req,res)=>{
    try
    {
          const user = await userModel.findOne({mobile:req.body.mobile})
+        
             if(user.otp == req.body.otp)
             {
                 res.cookie('user_name',user.name)
                 res.cookie('user_mobile',user.mobile)
+                await userModel.findOneAndUpdate({mobile:req.body.mobile},{otp:null})
                 return res.status(200).json("Login Successful")
             }
             else
@@ -149,7 +175,15 @@ mainRouter.get('/userDashboard',async  (req,res)=>
     try
     {
          const product = await userModel.findOne({mobile:req.cookies.user_mobile})
-         res.render('userDashboard',{products:product.products})
+         if(product.products.length == 0)
+         {
+                return res.render('userDashboard',{products:[]})
+         }
+         else
+         {
+            res.render('userDashboard',{products:product.products})
+         }
+        
     }
 
     catch(error)
@@ -177,9 +211,10 @@ mainRouter.get('/add_product_to_cart', async (req,res)=>
 })
 mainRouter.get('/user_details', async  (req,res)=>
 {
+    
     try
     {
-       const user = await userModel.findOne({mobile:req.query.mobile})
+       const user = await userModel.findOne({mobile:req.cookies.user_mobile})
        res.status(200).json(user)
     }
     catch(error)
@@ -187,6 +222,101 @@ mainRouter.get('/user_details', async  (req,res)=>
         console.log(error.message)
     }
 })
+
+mainRouter.post('/create_folder' , async (req,res)=>
+{
+    try
+    {
+       const user = await userModel.findOne({mobile:req.cookies.user_mobile})
+       user.folders.push({folder_name:req.body.folder_name})
+       await user.save()
+       res.status(200).json("Folder Created Successfully")
+    }
+    catch(error)
+    {
+        console.log(error.message)
+    }
+})
+
+mainRouter.post('/upload_file',upload.single('document') ,async (req,res)=>
+{
+    try
+    {
+        const user = await userModel.findOne({mobile:req.cookies.user_mobile})
+        user.files.push({file_path:req.file.filename,folder_id:req.body.folder_id})
+        await user.save()
+        res.status(200).json("File Uploaded Successfully")
+    }
+    catch(error)
+    {
+        console.log(error.message)
+    }
+})
+
+mainRouter.get('/get_folders',async (req,res)=>
+{
+    try
+    {
+        const user = await userModel.findOne({mobile:req.cookies.user_mobile})
+        res.status(200).json(user.folders)
+    }
+    catch(error)
+    {
+        console.log(error.message)
+    }
+})
+mainRouter.get('/get_files',async (req,res)=>
+{
+    try
+    {
+        const data = await userModel.findOne({mobile:req.cookies.user_mobile})
+        const foldersWithFiles = data.folders.map(folder => {
+            const filesInFolder = data.files
+              .filter(file => file.folder_id == folder._id)
+              .map(file => file.file_path);
+          
+            return {
+              folder_name: folder.folder_name,
+              _id: folder._id,
+              files: filesInFolder
+            };
+          });
+          
+          res.status(200).json(foldersWithFiles);
+        
+    }
+    catch(error)
+    {
+        console.log(error.message)
+    }
+})
+
+// admin 
+mainRouter.get('/admin/user_files',async (req,res)=>
+{
+    try
+    {
+        const data = await userModel.findOne({mobile:req.body.user_mobile})
+        const foldersWithFiles = data.folders.map(folder => {
+            const filesInFolder = data.files
+              .filter(file => file.folder_id == folder._id)
+              .map(file => file.file_path);
+          
+            return {
+              folder_name: folder.folder_name,
+              _id: folder._id,
+              files: filesInFolder
+            };
+          });
+          
+          res.status(200).json(foldersWithFiles);
+    }
+    catch(error)
+    {
+         console.log(error.message)
+    }
+})
+
 mainRouter.get('/logout',(req,res)=>
 {
     res.clearCookie('user_mobile');
