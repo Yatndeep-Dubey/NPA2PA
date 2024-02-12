@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboardfolder</title>
+       <!-- tailwind CDN -->
+       <script src="https://cdn.tailwindcss.com"></script>
+       <!---CSS Link-->
+       <link rel="stylesheet" href="/assets/css/home.css">
+       <!--font link-->
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300&family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&family=Poppins:wght@300;600&family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+<style>
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 30px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 5px 10px;
+    z-index: 1;
+  }
+
+  /* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: center;
+  bottom: 0;
+  right: 15px;
+  z-index: 9;
+}
+
+
+
+
+</style>
+<body>
+    <section class="mx-12 mt-12">
+        <div class="flex justify-space-between textInter float-right ">
+            <div class="mx-2">
+                <button class="bg-[#F6F5EF] px-4 py-2 rounded-full">My Documents</button>
+            </div>
+            <div class="mx-2">
+                <button class="bg-[#F6F5EF] px-4 py-2 rounded-full flex"> <img src="../public/../public/images/dashboard_help.svg" alt="" class="h-6"> Help</button>
+            </div>
+            <div class="mx-2">
+                <p class=" px-4 py-2 rounded-full flex"> <img src="../public/images/dashboard_profile.svg" alt="" class="mt-[-16px]"></p>
+            </div>
+
+            <div class="mt-4 px-2 mr-4 dropdown mt-[-0.5px]">
+              <span class="pr-2 py-2 mr-2 text-md font-semibold rounded-full flex">Kanha 
+                <img src="../public/images/nav_arrow_down.svg" alt="" class="ml-2">
+              </span>
+              <div class=" dropdown-content ">
+               <p>My Docs</p>
+               <p>Profile updates</p> 
+               <p>Log out</p>
+              </div>
+            </div>
+           
+        </div>
+    </section>
+    <!-- section-->
+    <section class="mx-12 mt-12 ">
+        <div class="flex mx-4 textInter">
+            <p class="text-5xl font-extrabold">Dash</p>
+            <p class="text-5xl">board</p>
+            <p class="text-7xl font-extrabold text-[#80DED9]">/</p>
+            <p class="text-4xl font-extrabold pt-4">#11</p>
+        </div> 
+   </section>
+   <!-- upload button -->
+<section class="mx-12">
+   
+
+<div class="text-2xl"> Upload your Documents here...
+    <div class="mt-8 " >      
+         <button class="bg-slate-300 px-4 py-2 rounded-lg hover:bg-[#FFD450] hover:px-8 open-button"  onclick="openForm()">Upload Docs</button>
+    </div>
+
+    <div class="mt-4 form-popup" id="myFolder">
+      <form action="">
+        <input type="file" name="" id="">
+      </form>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<div class="form-popup" id="myForm">
+  <div class="h-72 w-[50%] bg-slate-100 rounded-2xl mx-auto">
+    <div class="pt-4">
+     
+    </div> 
+       <p class="text-3xl text-center mt-16">Are you sure want to add documents?</p>
+       <div class="flex items-center mt-24">
+         <div class="bg-[#67CC83] h-16 w-16 rounded-full mx-auto text-white cursor-pointer btn" type="submit" onclick="openFolder()"  >
+           <p class="text-center text-5xl text-white" >✓ </p>
+         </div>
+         <div class="bg-[#FF6969] h-16 w-16 rounded-full mx-auto text-white cursor-pointer btn cancel"  onclick="closeForm()">
+           <p class="text-center text-5xl ">x</p>
+         </div>
+       </div>
+   </div>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+function openFolder() {
+  document.getElementById("myFolder").style.display = "block";
+}
+
+</script>
+
+  
+</body>
+
+
+</html>

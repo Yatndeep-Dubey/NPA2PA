@@ -359,3 +359,7 @@ mainRouter.get('/faq',(req,res)=>
 {
     res.render('faq')
 })
+mainRouter.get('/userDashboardFolder',(req,res)=>
+{
+    res.render('userDashboardFolder')
+})
