@@ -46,7 +46,6 @@ mainRouter.use(session(
 ))
 mainRouter.get('/',(req,res)=>
 {
-    const data = 
     let data = [
     { id: 1, name: "Prateek", email: "prateek@example.com" },
     { id: 2, name: "Jane Smith", email: "jane@example.com" },
