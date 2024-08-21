@@ -46,7 +46,60 @@ mainRouter.use(session(
 ))
 mainRouter.get('/',(req,res)=>
 {
-    res.render('index')
+    const data = 
+    let data = [
+    { id: 1, name: "Prateek", email: "prateek@example.com" },
+    { id: 2, name: "Jane Smith", email: "jane@example.com" },
+    { id: 3, name: "Michael Johnson", email: "michael@example.com" },
+    { id: 4, name: "Emily Davis", email: "emily@example.com" },
+    { id: 5, name: "Daniel Brown", email: "daniel@example.com" },
+    { id: 6, name: "Olivia Wilson", email: "olivia@example.com" },
+    { id: 7, name: "Ethan Lee", email: "ethan@example.com" },
+    { id: 8, name: "Sophia Harris", email: "sophia@example.com" },
+    { id: 9, name: "Liam Clark", email: "liam@example.com" },
+    { id: 10, name: "Mia Lewis", email: "mia@example.com" },
+    { id: 11, name: "John Doe", email: "john@example.com" },
+    { id: 12, name: "Jane Smith", email: "jane@example.com" },
+    { id: 13, name: "Michael Johnson", email: "michael@example.com" },
+    { id: 14, name: "Emily Davis", email: "emily@example.com" },
+    { id: 15, name: "Daniel Brown", email: "daniel@example.com" },
+    { id: 16, name: "Olivia Wilson", email: "olivia@example.com" },
+    { id: 17, name: "Ethan Lee", email: "ethan@example.com" },
+    { id: 18, name: "Sophia Harris", email: "sophia@example.com" },
+    { id: 19, name: "Liam Clark", email: "liam@example.com" },
+    { id: 20, name: "Mia Lewis", email: "mia@example.com" },
+    { id: 21, name: "John Doe", email: "john@example.com" },
+    { id: 22, name: "Jane Smith", email: "jane@example.com" },
+    { id: 23, name: "Michael Johnson", email: "michael@example.com" },
+    { id: 24, name: "Emily Davis", email: "emily@example.com" },
+    { id: 25, name: "Daniel Brown", email: "daniel@example.com" },
+    { id: 26, name: "Olivia Wilson", email: "olivia@example.com" },
+    { id: 27, name: "Ethan Lee", email: "ethan@example.com" },
+    { id: 28, name: "Sophia Harris", email: "sophia@example.com" },
+    { id: 29, name: "Liam Clark", email: "liam@example.com" },
+    { id: 30, name: "Mia Lewis", email: "mia@example.com" },
+    { id: 31, name: "John Doe", email: "john@example.com" },
+    { id: 32, name: "Jane Smith", email: "jane@example.com" },
+    { id: 33, name: "Michael Johnson", email: "michael@example.com" },
+    { id: 34, name: "Emily Davis", email: "emily@example.com" },
+    { id: 35, name: "Daniel Brown", email: "daniel@example.com" },
+    { id: 36, name: "Olivia Wilson", email: "olivia@example.com" },
+    { id: 37, name: "Ethan Lee", email: "ethan@example.com" },
+    { id: 38, name: "Sophia Harris", email: "sophia@example.com" },
+    { id: 39, name: "Liam Clark", email: "liam@example.com" },
+    { id: 40, name: "Mia Lewis", email: "mia@example.com" },
+    { id: 41, name: "John Doe", email: "john@example.com" },
+    { id: 42, name: "Jane Smith", email: "jane@example.com" },
+    { id: 43, name: "Michael Johnson", email: "michael@example.com" },
+    { id: 44, name: "Emily Davis", email: "emily@example.com" },
+    { id: 45, name: "Daniel Brown", email: "daniel@example.com" },
+    { id: 46, name: "Olivia Wilson", email: "olivia@example.com" },
+    { id: 47, name: "Ethan Lee", email: "ethan@example.com" },
+    { id: 48, name: "Sophia Harris", email: "sophia@example.com" },
+    { id: 49, name: "Liam Clark", email: "liam@example.com" },
+    { id: 50, name: "Mia Lewis", email: "mia@example.com" }
+]
+    res.json(data)
 }
 )
 
