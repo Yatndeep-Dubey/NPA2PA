@@ -3,6 +3,9 @@ const port = 3000
 const app = express()
 const database = require('./database/connection')
 const mainRouter = require('./router/mainRouter')
+const cors = require('cors')
+
+app.use(cors())
 
 app.use('/',mainRouter)
 
